@@ -54,6 +54,27 @@ export default function NetworkGraph({
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('collision', d3.forceCollide<SimulationNode>().radius(60));
 
+    // Force grouping by community
+    simulation.force('x', d3.forceX().strength(0.1).x(d => {
+      switch((d as Character).community) {
+        case 'legacy': return width * 0.25;
+        case 'core-four': return width * 0.75;
+        case 'killers': return width * 0.5;
+        case 'secondary': return width * 0.5;
+        default: return width * 0.5;
+      }
+    }));
+    
+    simulation.force('y', d3.forceY().strength(0.1).y(d => {
+      switch((d as Character).community) {
+        case 'legacy': return height * 0.25;
+        case 'core-four': return height * 0.25;
+        case 'killers': return height * 0.75;
+        case 'secondary': return height * 0.5;
+        default: return height * 0.5;
+      }
+    }));
+
     const g = svg.append('g');
 
     // Zoom behavior
@@ -106,17 +127,22 @@ export default function NetworkGraph({
       })
       .attr('fill', d => {
         if (d.id === selectedCharacter?.id) return '#fff';
-        if (d.role === 'killer') return '#111';
-        if (d.status === 'dead') return '#222';
-        return '#000';
+        switch(d.community) {
+          case 'legacy': return '#1a365d'; // Deep blue
+          case 'core-four': return '#2f855a'; // Green
+          case 'killers': return '#000'; // Black
+          case 'secondary': return '#4a5568'; // Gray
+          default: return '#000';
+        }
       })
       .attr('stroke', d => {
         if (d.id === selectedCharacter?.id) return '#dc2626';
         if (d.role === 'killer') return '#dc2626';
-        if (d.role === 'legacy') return '#neutral-600';
+        if (d.role === 'legacy') return '#4a5568';
         return '#333';
       })
       .attr('stroke-width', d => d.id === selectedCharacter?.id ? 4 : 2)
+      .attr('stroke-dasharray', d => d.status === 'dead' ? '4,2' : 'none')
       .classed('node-active', d => d.id === selectedCharacter?.id);
 
     // Icons/Text in nodes
@@ -167,7 +193,27 @@ export default function NetworkGraph({
       
       {/* Legend */}
       <div className="absolute top-4 left-4 p-6 bg-black/60 backdrop-blur-md border border-neutral-800 flex flex-col gap-3">
-        <div className="text-[10px] uppercase tracking-[0.2em] font-black text-neutral-500 mb-1">Key Identifiers</div>
+        <div className="text-[10px] uppercase tracking-[0.2em] font-black text-neutral-500 mb-1">Communities (Clusters)</div>
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 rounded-full bg-[#1a365d] border border-neutral-600" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">Woodsboro Legacy</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 rounded-full bg-[#2f855a] border border-neutral-600" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">The Carpenter Node</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 rounded-full bg-[#000] border border-red-600" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">The Stab Parasites</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 rounded-full bg-[#4a5568] border border-neutral-600" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">Others</span>
+        </div>
+        
+        <div className="h-px bg-neutral-800 my-1" />
+        
+        <div className="text-[10px] uppercase tracking-[0.2em] font-black text-neutral-500 mb-1">Link Types</div>
         <div className="flex items-center gap-3">
           <div className="w-3 h-3 rounded-full bg-[#ffffff]" />
           <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">Romantic</span>

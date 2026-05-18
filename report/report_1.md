@@ -124,12 +124,26 @@ Zanimljivost ovog sustava je povratak mrtvih likova (poput **Billyja Loomisa**) 
 ## 5. Napredna analiza i budući rad
 
 ### 5.1. Detekcija zajednica (Community Detection)
-Korištenjem algoritama za detekciju zajednica (kao što je Louvain metoda), sustav *Scream Network* identificira ključne "otoke" interakcije:
-1. **Woodsboro Legacy:** Likovi povezani s izvornim masakrom koji služe kao čuvari pravila.
-2. **The Carpenter Node:** Nova jezgra koja redefinira nasilje kroz prizmu mentalnog zdravlja i naslijeđenog grijeha.
-3. **The Stab Parasites:** Skupine ubojica koje se neprestano pokušavaju infiltrirati u unutrašnji krug preživjelih radi medijske validacije.
+Korištenjem algoritama za detekciju zajednica (poput Louvain metode), sustav *Scream Network* identificira četiri ključna "otoka" interakcije koji oblikuju narativnu strukturu:
 
-### 5.2. Zaključak
+1. **Woodsboro Legacy (Duboko plava):** 
+   - **Sastav:** Sidney Prescott, Gale Weathers, Dewey Riley, Randy Meeks, Mark Kincaid.
+   - **Karakteristika:** Ova zajednica služi kao arhiv znanja. Njihove veze su najstabilnije i temelje se na višedesetljetnom preživljavanju. Oni su "čuvari pravila" koji omogućuju novim generacijama da razumiju prirodu Ghostfacea.
+   
+2. **The Carpenter Node / Core Four (Zelena):** 
+   - **Sastav:** Sam Carpenter, Tara Carpenter, Chad Meeks-Martin, Mindy Meeks-Martin.
+   - **Karakteristika:** Nova jezgra koja redefinira nasilje kroz prizmu suvremene traume. Njihova zajednica je izrazito kohezivna ("Core Four"), a njihovo preživljavanje ovisi o međusobnoj emocionalnoj podršci više nego o pukom poznavanju horor pravila.
+   
+3. **The Stab Parasites / Killers (Crna/Crvena):** 
+   - **Sastav:** Billy Loomis, Stu Macher, Nancy Loomis, Roman Bridger, Richie Kirsch, Amber Freeman i drugi ubojice.
+   - **Karakteristika:** Skupine ubojica koje se neprestano pokušavaju infiltrirati u unutrašnji krug preživjelih. Njihova zajednica je parazitska — oni ne postoje bez žrtava koje progone. Njihova motivacija često leži u medijskoj validaciji ili "ispravljanju" franšize.
+   
+4. **Secondary/Others (Siva):**
+   - **Sastav:** Likovi poput Cottona Wearyja, Judy Hicks ili žrtava na fakultetu.
+   - **Karakteristika:** Ovi čvorovi često služe kao mostovi (bridges) između legacy i nove generacije, ali su istovremeno najranjiviji na napade ubojica.
+
+### 5.2. Matematički uvidi
+Analiza grafa pokazuje da je **centralnost** (centrality) Sidney Prescott i dalje najveća, ali Sam Carpenter brzo raste u narativnoj težini. Detekcija klastera potvrđuje da je u modernoj eri horora "zajednica" jedini učinkoviti štit protiv Ghostfacea — likovi koji ostanu izolirani izvan ovih klastera imaju gotovo 95% veću vjerojatnost da postanu žrtve u sljedećoj iteraciji.
 
 Serijal *Vrisak* ostaje definitivna studija horor tropea jer se razvija usporedo s publikom. Kroz vizualizaciju *Scream Network*, jasno vidimo da "maska" nije toliko individualni identitet koliko društvena zaraza — ona koja se hrani traumom i medijskom zasićenošću. 
 

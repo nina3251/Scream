@@ -1,3 +1,5 @@
+export type Community = 'legacy' | 'core-four' | 'killers' | 'secondary';
+
 export interface Character {
   id: string;
   name: string;
@@ -6,6 +8,7 @@ export interface Character {
   status: 'alive' | 'dead';
   description: string;
   imageUrl?: string;
+  community: Community;
 }
 
 export interface Relationship {

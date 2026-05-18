@@ -119,6 +119,15 @@ export default function Sidebar({
                   <span className="px-2 py-0.5 border border-black text-black text-[10px] font-black uppercase opacity-60">
                     {selectedCharacter.role}
                   </span>
+                  <span className={cn(
+                    "px-2 py-0.5 border text-white text-[10px] font-black uppercase",
+                    selectedCharacter.community === 'legacy' && "bg-blue-900 border-blue-900",
+                    selectedCharacter.community === 'core-four' && "bg-green-900 border-green-900",
+                    selectedCharacter.community === 'killers' && "bg-black border-red-600 text-red-600",
+                    selectedCharacter.community === 'secondary' && "bg-neutral-600 border-neutral-600"
+                  )}>
+                    {selectedCharacter.community.replace('-', ' ')}
+                  </span>
                </div>
 
                <div className="mt-6 font-mono text-xs leading-relaxed font-bold border-l-2 border-red-600 pl-4 py-1 italic">
