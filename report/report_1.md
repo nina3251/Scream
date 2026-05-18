@@ -44,6 +44,23 @@ Bez *Vriska*, moderni horori poput *Cabin in the Woods* ili *Bodies Bodies Bodie
 ## 3. Metodologija: Analiza narativnog grafa (NGA)
 
 Aplikacija *Scream Network* koristi pristup analize narativnog grafa (NGA), crpeći inspiraciju iz alata za kolaborativnu sintezu znanja poput **NotebookLM-a**.
+
+### 3.1. Dijagram protoka podataka (App Data Flow)
+
+Sljedeći dijagram prikazuje kako sustav obrađuje podatke od statičke arhive do dinamičkih AI uvida:
+
+```mermaid
+graph TD
+    A[Statička Baza Podataka] -->|Likovi i Veze| B(D3.js Simulacija Grafa)
+    B -->|Renderiranje| C{Interaktivni UI}
+    C -->|Korisnički Klik na Čvor| D[State Management: Odabrani Lik]
+    D -->|ID Lika| E[Gemini AI Processors]
+    E -->|Generiranje Psihološkog Profila| F[Ghostface Insights]
+    F -->|Prikaz u Sidebaru| G[Forenzička Nadzorna Ploča]
+    C -->|Filter Godine| B
+    G -->|Interakcija| C
+```
+
 - **Konceptualni temelj:** Koristeći analizu iz bilježnice `53b9ab2f...`, identificirali smo ključne klastere dokumenata — specifično vezane uz "identitet" i "medijsko nasilje" — te ih mapirali u strukturu podataka aplikacije.
 - **Arhitektonski dizajn:** Aplikacija je izgrađena koristeći filozofiju "digitalne forenzike". Cilj je bio odmaknuti se od generičkog korisničkog sučelja i stvoriti iskustvo "Ghostface OS-a".
 - **Klasifikacija čvorova:** Likovi su kategorizirani prema njihovoj narativnoj težini (Glavni, Legendarni/Legacy, Ubojica, Žrtva).
