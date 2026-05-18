@@ -26,11 +26,20 @@ Masakr u New Yorku (2023.) pokazao je da se krug nasilja transformirao u obitelj
 
 ## 2. Pregled literature: Slasher i meta-horor
 
-### 2.1. "Finalna djevojka" (Final Girl) i trauma
-Trope "Finalne djevojke" Carol J. Clover (1992.) personificiran je i naknadno subvertiran kroz lik Sidney Prescott. Za razliku od svojih prethodnica u filmovima *Noć vještica* (*Halloween*) ili *Petak 13.* (*Friday the 13th*), Sidneyino preživljavanje vezano je uz njezinu odlučnost i psihološko propitivanje njezina naslijeđa. *Scream Network* to vizualizira pozicionirajući nju (i njezinu majku Maureen) kao središnje čvorove u višedesetljetnom ciklusu traume.
+### 2.1. Postmodernistička dekonstrukcija žanra
+Serijal *Vrisak* markira ključnu točku u povijesti horora kao trenutak kada žanr postaje svjestan samog sebe. Prema akademskim analizama (npr. *Eye Candy Film Journal*), *Vrisak* nije samo horor, već kritika horora. Filmovi koriste "intertekstualnost" — likovi raspravljaju o filmovima poput *Noć vještica* ili *Petak 13.* dok se nalaze u situacijama koje ih repliciraju. Ovaj postmodernistički pristup omogućio je revitalizaciju slasher žanra koji je sredinom 90-ih bio na rubu izumiranja.
 
-### 2.2. Meta-kinematografija i serijal 'Ubod' (Stab)
-Stvaranjem fiktivne franšize *Ubod* unutar filmova, *Vrisak* omogućuje kritiku fascinacije publike stvarnim nasiljem. Ova struktura "filma unutar filma" služi kao preteča modernog trenda "requela" (reboot-nastavak) koji se danas vidi u hororima.
+### 2.2. "Finalna djevojka" (Final Girl) i evolucija traume
+Carol J. Clover (1992.) u svojoj utjecajnoj knjizi *Men, Women, and Chain Saws* definirala je "Finalnu djevojku" kao lik koji preživljava jer je moralno superioran i često "maskuliniziran" u finalnom činu. Sidney Prescott subvertira ovu definiciju. Kroz sedam filmova, njezina trauma nije samo pozadinska priča, već središnja tema. Ona ne preživljava samo jedan napad, već živi u stalnom stanju pripravnosti, pretvarajući se iz žrtve u "legacy" mentoricu novim generacijama (poput Sam i Tare Carpenter). Njezina evolucija odražava promjenu u društvenom shvaćanju traume — ona više nije stigma, već izvor snage.
+
+### 2.3. Toksični fandom i "Requel" pravila
+Noviji nastavci (Vrisak 2022 i VI) uveli su pojam "requela" (reboot-nastavak). Kako navode kritičari s portala *The Ringer* i *Horror Press*, ovi filmovi analiziraju odnos između kreatora i publike. Motivi ubojica poput Richieja i Amber više nisu osobna osveta, već bijes protiv onoga što smatraju lošim filmskim nastavcima. Ovo odražava stvarni fenomen toksičnog fandoma u modernoj kulturi, gdje obožavatelji osjećaju vlasništvo nad intelektualnim vlasništvom, spremni na ekstremne mjere ("ubijanje za umjetnost") kako bi korigirali narativ.
+
+### 2.4. Tehnologija kao oružje i svjedok
+Od legendarne scene s fiksnim telefonom do manipulacija dubokim krivotvorinama (AI deepfakes) u najnovijim simulacijama, tehnologija je u *Vrisku* uvijek bila treći sudionik. Tehnološki determinizam ovdje igra ključnu ulogu: Ghostface koristi medije komunikacije kako bi izolirao žrtvu. U Woodsborou, privatnost je nemoguća, a svaki digitalni trag (kao što prikazuje naša aplikacija *Scream Network*) potencijalno vodi do sljedeće mete.
+
+### 2.5. Utjecaj na moderne slashere
+Bez *Vriska*, moderni horori poput *Cabin in the Woods* ili *Bodies Bodies Bodies* ne bi postojali. Franšiza je otvorila prostor za horor koji je "pametan", svjestan svojih klišea i spreman se šaliti na vlastiti račun, a da pritom zadrži istinski osjećaj ugroze. Analiza mrežnih čvorova u našem sustavu pokazuje da je moć Ghostfacea upravo u njegovoj anonimnosti — maska može biti bilo tko, što je ultimativni strah u društvu koje sve više gubi individualnost u kolektivnom digitalnom prostoru.
 
 ## 3. Metodologija: Analiza narativnog grafa (NGA)
 
