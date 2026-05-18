@@ -144,10 +144,12 @@ export default function Sidebar({
 
                <div className="mt-6 flex flex-col gap-4">
                 <div className="p-4 bg-neutral-100 border border-neutral-200">
-                  <h4 className="text-[9px] uppercase tracking-widest text-neutral-400 font-bold mb-2 underline decoration-red-600 underline-offset-4 font-mono">Apperance Logs</h4>
-                  <div className="flex gap-2">
+                  <h4 className="text-[9px] uppercase tracking-widest text-neutral-400 font-bold mb-3 underline decoration-red-600 underline-offset-4 font-mono">Appearance History</h4>
+                  <div className="flex flex-wrap gap-1.5">
                     {selectedCharacter.movies.map(m => (
-                      <span key={m} className="text-sm font-black text-red-600">v{m}</span>
+                      <span key={m} className="px-2 py-1 bg-white border border-neutral-300 text-[10px] font-black text-red-600 shadow-sm">
+                        SCREAM {movieData.find(movie => movie.id === m)?.label || m}
+                      </span>
                     ))}
                   </div>
                 </div>
