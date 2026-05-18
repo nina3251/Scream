@@ -71,20 +71,25 @@ graph TD
 
 ### 4.1. Evolucija Ghostfacea
 Identitet Ghostfacea evoluirao je od osvetničkog plana s jednim motivom (Billy Loomis) do višestruke kritike medijske slave i toksičnog fandoma.
-- **Faza 1 (Podrijetlo):** Osveta zbog narušenih obiteljskih odnosa (filmovi 1. – 3.).
-- **Faza 2 (Meta-slava):** Ubijanje radi postizanja relevantnosti na društvenim mrežama (film 4.).
-- **Faza 3 (Toksični fandom):** Ubijanje kako bi se "spasila" franšiza koja propada (filmovi 5. – 6.).
-- **Faza 4 (Post-istina):** Korištenje AI deepfakeova i dezinformacija (film 7.).
+- **Faza 1 (Podrijetlo):** Osveta zbog narušenih obiteljskih odnosa (filmovi 1. – 3.). Ovdje je ubojica personifikacija potisnutih obiteljskih tajni.
+- **Faza 2 (Meta-slava):** Ubijanje radi postizanja relevantnosti na društvenim mrežama (film 4.). Jill Roberts predstavlja prvu generaciju koja ne želi samo preživjeti, nego želi "postati" vijest.
+- **Faza 3 (Toksični fandom):** Ubijanje kako bi se "spasila" franšiza koja propada (filmovi 5. – 6.). Richie i Amber su meta-kritika publike koja smatra da ima pravo glasa u kreativnom procesu.
+- **Faza 4 (Post-istina):** Korištenje AI deepfakeova i dezinformacija (film 7.). U ovoj fazi, maska više nije samo fizička, nego i digitalna.
 
-### 4.2. Medijska kultura i reprezentacija tinejdžera
-Franšiza služi kao vremenska kapsula za tinejdžerske medijske navike. Godine 1996. fiksni telefon bio je oružje; 2026. godine oružje je manipulacija samom mrežom *Scream Network*. Tinejdžeri u *Vrisku* prikazani su kao hiper-obrazovani, ali etički desenzibilizirani medijima koje konzumiraju, što odražava "teoriju desenzibilizacije" o kojoj se često raspravlja u znanosti o hororu.
+### 4.2. Dinamika naslijeđa: Sidney Prescott vs. Sam Carpenter
+Vizualizacija mreže jasno pokazuje smjenu generacija kroz prizmu traume. Dok je Sidney Prescott (čvor koji dominira prvim četiri filma) simbol čiste otpornosti i moralne pobjede, Sam Carpenter uvodi koncept "naslijeđenog zla". Kao kći Billyja Loomisa, Sam se bori s unutarnjim demonima, doslovno halucinirajući svog oca ubojicu. Njezino preživljavanje nije samo fizičko, već i psihološka borba da ne postane ono što je on bio. Naš graf to prikazuje kroz "naslijeđene veze" (inherited links) koje je povezuju s izvornim masakrom iz '96.
 
-### 4.3. Metafikcija i moderni slasheri
-*Vrisak* (2022.) i *Vrisak VI* popularizirali su "pravila requela", koja su utjecala na kasnije filmove poput *Evil Dead Rise* i *Halloween Ends*. Samosvijest osigurava da je skepticizam publike ugrađen u scenarij, pretvarajući iskustvo gledanja u kolaborativnu igru "Tko je ubojica?".
+### 4.3. Stupovi Woodsboroa: Gale Weathers i Dewey Riley
+Bez Gale i Deweya, mreža bi se raspala. Gale Weathers predstavlja eksploatacijski aspekt medija; ona je ta koja pretvara tragediju u literaturu, čime održava mit o Ghostfaceu živim za nove generacije ubojica. Dewey Riley, s druge strane, služi kao moralno sidro. Njegova smrt u analizi podataka označava točku u kojoj mreža postaje kaotičnija i brutalnija, gubeći svoju "staru školu" zaštite.
+
+### 4.4. Arhitektura straha: Od fiksnog telefona do Scream Networka
+Tehnološki determinizam je ključan za *Vrisak*. Svaka nova iteracija Ghostfacea koristi najmodernije alate za izolaciju žrtve. U 1996., to je bio fiksni telefon i sustav za promjenu glasa. U 2026., to je sama vizualizacija mreže koju mi gradimo. Aplikacija poput *Scream Networka* u rukama ubojice postaje alat za precizno mapiranje meta, dok za istraživače služi kao forenzički arhiv. Ovaj meta-paradoks — da gradimo alat koji bi ubojica mogao koristiti — srž je *Vrisak* metafikcije.
 
 ## 5. Zaključak
 
-Serijal *Vrisak* ostaje definitivna studija horor tropea jer se razvija usporedo s publikom. Kroz vizualizaciju *Scream Network*, jasno vidimo da "maska" nije toliko individualni identitet koliko društvena zaraza — ona koja se hrani traumom i medijskom zasićenošću. Kako franšiza ulazi u eru umjetne inteligencije (kao što se vidi u simulaciji Woodsboro iz 2026.), granica između stvarnosti i fikcije *Uboda* nastavlja se brisati, dokazujući da se u Woodsborou pravila uvijek mijenjaju i da su svi sumnjivi.
+Serijal *Vrisak* ostaje definitivna studija horor tropea jer se razvija usporedo s publikom. Kroz vizualizaciju *Scream Network*, jasno vidimo da "maska" nije toliko individualni identitet koliko društvena zaraza — ona koja se hrani traumom i medijskom zasićenošću. 
+
+Zaključno, *Vrisak* nije samo serija filmova o ubojici s nožem; to je kontinuirana društvena studija o tome kako mediji, fandomi i neriješena obiteljska tragedija mogu stvoriti samoodrživi ciklus nasilja. Naša aplikacija dokazuje da se u digitalnom dobu svaki čin nasilja može kvantificirati, ali motivacija ostaje duboko ljudska (ili ne-ljudska) u svojoj potrebi za priznanjem, osvetom ili pukim kaosom. Dok god postoji publika gladna "istinite priče" ili "savršenog nastavka", Ghostface će imati mjesto u našoj mreži. U Woodsborou, pravila se uvijek mijenjaju, ali krajnji rezultat je isti: svi su u opasnosti, a krug se nikada ne zatvara, samo se širi.
 
 ---
 
