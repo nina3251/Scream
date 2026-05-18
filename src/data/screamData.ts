@@ -9,6 +9,19 @@ export const screamData: ScreamData = {
     { id: 'dewey-riley', name: 'Dewey Riley', movies: [1, 2, 3, 4, 5, 7], role: 'legacy', status: 'dead', description: 'Dobroćudni policajac i Sidneyin zaštitnik. Ubijen je u petom filmu od strane Amber Freeman dok je spašavao Taru Carpenter. U Scream 7 pojavljuje se kao AI duboka krivotvorina koju ubojice koriste da muče Sidney.' },
     { id: 'mark-kincaid', name: 'Mark Kincaid', movies: [3, 7], role: 'secondary', status: 'alive', description: 'Detektiv iz Los Angelesa koji je pomogao Sidney u trećem filmu. Sidneyin suprug.' },
     { id: 'randy-meeks', name: 'Randy Meeks', movies: [1, 2, 3], role: 'main', status: 'dead', description: 'Originalni stručnjak za horore. Ubila ga je Nancy Loomis. Brat Marthe Meeks.' },
+    
+    // --- SCREAM 2 EXTENDED ---
+    { id: 'cici-cooper', name: 'Cici Cooper', movies: [2], role: 'victim', status: 'dead', description: 'Sestra iz sestrinstva Omega Beta Zeta, ubijena od strane Mickeyja Altierija.' },
+    { id: 'derek-feldman', name: 'Derek Feldman', movies: [2], role: 'secondary', status: 'dead', description: 'Sidneyin dečko na fakultetu, ubijen od strane Mickeyja.' },
+    { id: 'hallie-mcdaniel', name: 'Hallie McDaniel', movies: [2], role: 'secondary', status: 'dead', description: 'Sidneyina najbolja prijateljica na fakultetu.' },
+
+    // --- SCREAM 3 EXTENDED ---
+    { id: 'jennifer-jolie', name: 'Jennifer Jolie', movies: [3], role: 'secondary', status: 'dead', description: 'Glumica koja je glumila Gale Weathers u Stab 3.' },
+    { id: 'sarah-darling', name: 'Sarah Darling', movies: [3], role: 'victim', status: 'dead', description: 'Glumica iz Stab 3.' },
+
+    // --- SCREAM 4 EXTENDED ---
+    { id: 'olivia-morris', name: 'Olivia Morris', movies: [4], role: 'victim', status: 'dead', description: 'Jillina i Kirbyina prijateljica.' },
+    { id: 'rebecca-walters', name: 'Rebecca Walters', movies: [4], role: 'secondary', status: 'dead', description: 'Sidneyina publicistica.' },
 
     // --- NEW GENERATION (CORE FOUR) ---
     { id: 'sam-carpenter', name: 'Sam Carpenter', movies: [5, 6], role: 'main', status: 'alive', description: 'Glavna protagonistica petog i šestog filma. Ona je izvanbračna kći Billyja Loomisa (prvog ubojice), što je tajna koju je otkrila u majčinim dnevnicima. Pati od vizija svog mrtvog oca koji je potiče na nasilje.' },
@@ -35,6 +48,10 @@ export const screamData: ScreamData = {
     // Scream (2022)
     { id: 'richie-kirsch', name: 'Richie Kirsch', movies: [5], role: 'killer', status: 'dead', description: 'Samin dečko. Motiv: bijesni obožavatelj Stab franšize koji je želio "stvoriti materijal" za bolji nastavak.' },
     { id: 'amber-freeman', name: 'Amber Freeman', movies: [5], role: 'killer', status: 'dead', description: 'Tarina prijateljica koja živi u bivšoj kući Stu Machera. Ubila je Deweya Rileyja i Judy Hicks.' },
+    { id: 'wes-hicks', name: 'Wes Hicks', movies: [5], role: 'secondary', status: 'dead', description: 'Sin Judy Hicks, ubijen u petom filmu.' },
+    
+    // --- SCREAM VI EXTENDED ---
+    { id: 'anika-kayoko', name: 'Anika Kayoko', movies: [6], role: 'victim', status: 'dead', description: 'Mindyina djevojka, ubijena u New Yorku.' },
     
     // Scream VI (2023)
     { id: 'det-wayne-bailey', name: 'Wayne Bailey', movies: [6], role: 'killer', status: 'dead', description: 'Detektiv i Richiejev otac. Cijela obitelj se željela osvetiti Sam Carpenter za Richiejevo ubojstvo.' },
@@ -101,6 +118,16 @@ export const screamData: ScreamData = {
     { source: 'roman-bridger', target: 'cotton-weary', type: 'killer-victim', strength: 5 },
     { source: 'jill-roberts', target: 'charlie-walker', type: 'killer-victim', strength: 5 },
     { source: 'maureen-prescott', target: 'cotton-weary', type: 'romantic', strength: 4 }, // Affair
+    { source: 'sidney-prescott', target: 'hallie-mcdaniel', type: 'friendship', strength: 5 },
+    { source: 'sidney-prescott', target: 'derek-feldman', type: 'romantic', strength: 5 },
+    { source: 'gale-weathers', target: 'jennifer-jolie', type: 'friendship', strength: 3 },
+    { source: 'jill-roberts', target: 'olivia-morris', type: 'friendship', strength: 5 },
+    { source: 'kirby-reed', target: 'olivia-morris', type: 'friendship', strength: 5 },
+    { source: 'judy-hicks', target: 'wes-hicks', type: 'family', strength: 5 },
+    { source: 'mindy-meeks-martin', target: 'anika-kayoko', type: 'romantic', strength: 5 },
+    { source: 'mickey-altieri', target: 'derek-feldman', type: 'killer-victim', strength: 5 },
+    { source: 'mickey-altieri', target: 'cici-cooper', type: 'killer-victim', strength: 5 },
+    { source: 'amber-freeman', target: 'wes-hicks', type: 'killer-victim', strength: 5 },
   ]
 };
 

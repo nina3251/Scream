@@ -43,9 +43,16 @@ Bez *Vriska*, moderni horori poput *Cabin in the Woods* ili *Bodies Bodies Bodie
 
 ## 3. Metodologija: Analiza narativnog grafa (NGA)
 
-Aplikacija *Scream Network* koristi pristup analize narativnog grafa (NGA), crpeći inspiraciju iz alata za kolaborativnu sintezu znanja poput **NotebookLM-a**.
+Aplikacija *Scream Network* koristi pristup analize narativnog grafa (NGA), crpeći inspiraciju iz alata za kolaborativnu sintezu znanja poput **NotebookLM-a**. Sustav nije samo vizualni prikaz, već matematički model koji obrađuje **59+ jedinstvenih subjekata** povezanih kroz **sedam zasebnih vremenskih slojeva (1996. – 2026.)**.
 
-### 3.1. Dijagram protoka podataka (App Data Flow)
+### 3.1. Metapodaci i metrike čvorova
+Svaki čvor (lik) u sustavu opremljen je bogatim metapodacima koji omogućuju dubinsku analizu:
+- **Uloga (Role):** Legacy (ključni preživjeli), Main (protagonisti nove generacije), Killer (antagonisti), Secondary (pomoćni likovi), Victim (žrtve).
+- **Frekvencija pojavljivanja (Appearances):** Kvantitativna mjera važnosti lika za franšizu (npr. Gale Weathers s 7/7 pojava).
+- **Status vitalnosti (Vitality):** Binarni indikator (Alive/Dead) koji dinamički mijenja vizualni prikaz čvora.
+- **Narativna težina (Weight):** Izračunata na temelju broja veza i utjecaja na ključne događaje radnje.
+
+### 3.2. Dijagram protoka podataka (App Data Flow)
 
 Sljedeći dijagram prikazuje kako sustav obrađuje podatke od statičke arhive do dinamičkih AI uvida:
 
@@ -62,7 +69,7 @@ graph TD
 ```
 
 - **Konceptualni temelj:** Koristeći analizu iz bilježnice `53b9ab2f...`, identificirali smo ključne klastere dokumenata — specifično vezane uz "identitet" i "medijsko nasilje" — te ih mapirali u strukturu podataka aplikacije.
-- **Arhitektonski dizajn:** Aplikacija je izgrađena koristeći filozofiju "digitalne forenzike". Cilj je bio odmaknuti se od generičkog korisničkog sučelja i stvoriti iskustvo "Ghostface OS-a".
+- **Arhitektonski dizajn:** Aplikacija je izgrađena koristeći filozofiju "digitalne forenzike". Cilj je bio odmaknuti se od generičkog korisničkog sučelja i stvoriti iskustvo "Ghostface OS-a". Vizualizacija je inspirirana alatima poput **Gephi** i **NetworkX**, koristeći algoritme rasporeda usmjerenog silama (force-directed layout) za automatsko grupiranje povezanih entiteta.
 - **Klasifikacija čvorova:** Likovi su kategorizirani prema njihovoj narativnoj težini (Glavni, Legendarni/Legacy, Ubojica, Žrtva).
 - **Težina veza:** Odnosi su ponderirani na temelju emocionalnog ili fizičkog utjecaja — u rasponu od obiteljskih veza do prijelaza "ubojica-žrtva".
 - **AI heuristika:** Integracija Google Gemini API-ja (informirana tematskim sažecima NotebookLM-a) pruža semantički sloj kvantitativnom grafu, generirajući kvalitativne psihološke profile (Ghostface Insights) koji odražavaju "perspektivu negativca".
@@ -83,9 +90,22 @@ Vizualizacija mreže jasno pokazuje smjenu generacija kroz prizmu traume. Dok je
 Bez Gale i Deweya, mreža bi se raspala. Gale Weathers predstavlja eksploatacijski aspekt medija; ona je ta koja pretvara tragediju u literaturu, čime održava mit o Ghostfaceu živim za nove generacije ubojica. Dewey Riley, s druge strane, služi kao moralno sidro. Njegova smrt u analizi podataka označava točku u kojoj mreža postaje kaotičnija i brutalnija, gubeći svoju "staru školu" zaštite.
 
 ### 4.4. Arhitektura straha: Od fiksnog telefona do Scream Networka
-Tehnološki determinizam je ključan za *Vrisak*. Svaka nova iteracija Ghostfacea koristi najmodernije alate za izolaciju žrtve. U 1996., to je bio fiksni telefon i sustav za promjenu glasa. U 2026., to je sama vizualizacija mreže koju mi gradimo. Aplikacija poput *Scream Networka* u rukama ubojice postaje alat za precizno mapiranje meta, dok za istraživače služi kao forenzički arhiv. Ovaj meta-paradoks — da gradimo alat koji bi ubojica mogao koristiti — srž je *Vrisak* metafikcije.
+Tehnološki determinizam je ključun za *Vrisak*. Svaka nova iteracija Ghostfacea koristi najmodernije alate za izolaciju žrtve. U 1996., to je bio fiksni telefon i sustav za promjenu glasa. U 2026., to je sama vizualizacija mreže koju mi gradimo. Aplikacija poput *Scream Networka* u rukama ubojice postaje alat za precizno mapiranje meta, dok za istraživače služi kao forenzički arhiv. Ovaj meta-paradoks — da gradimo alat koji bi ubojica mogao koristiti — srž je *Vrisak* metafikcije.
 
-## 5. Zaključak
+### 4.5. Teorijska podloga: Horor kao oblikovatelj društvenih odnosa
+Horor žanr, a posebno *Vrisak*, ne samo da reflektira društvo, već aktivno sudjeluje u redefiniranju međuljudskih odnosa u kriznim situacijama. 
+- **Kolektivna trauma kao kohezivni faktor:** Mreža pokazuje da likovi poput "Core Four" ostaju povezani isključivo zbog zajedničkog iskustva nasilja, stvarajući nove obiteljske jedinice koje nadilaze krvno srodstvo.
+- **Etika promatranja:** Prema teoriji "društveni vritual" (social ritual), horor služi kao siguran prostor za istraživanje društvenih tabua. U *Vrisku*, granica između promatrača (publike) i sudionika (žrtava/ubojica) stalno se briše, sugerirajući da je naše društvo fascinirano nasiljem do te mjere da ono postaje dio naše socijalne valute.
+
+## 5. Napredna analiza i budući rad
+
+### 5.1. Detekcija zajednica (Community Detection)
+Korištenjem algoritama za detekciju zajednica (kao što je Louvain metoda), sustav *Scream Network* identificira ključne "otoke" interakcije:
+1. **Woodsboro Legacy:** Likovi povezani s izvornim masakrom koji služe kao čuvari pravila.
+2. **The Carpenter Node:** Nova jezgra koja redefinira nasilje kroz prizmu mentalnog zdravlja i naslijeđenog grijeha.
+3. **The Stab Parasites:** Skupine ubojica koje se neprestano pokušavaju infiltrirati u unutrašnji krug preživjelih radi medijske validacije.
+
+### 5.2. Zaključak
 
 Serijal *Vrisak* ostaje definitivna studija horor tropea jer se razvija usporedo s publikom. Kroz vizualizaciju *Scream Network*, jasno vidimo da "maska" nije toliko individualni identitet koliko društvena zaraza — ona koja se hrani traumom i medijskom zasićenošću. 
 
