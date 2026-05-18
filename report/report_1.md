@@ -92,10 +92,34 @@ Bez Gale i Deweya, mreža bi se raspala. Gale Weathers predstavlja eksploatacijs
 ### 4.4. Arhitektura straha: Od fiksnog telefona do Scream Networka
 Tehnološki determinizam je ključun za *Vrisak*. Svaka nova iteracija Ghostfacea koristi najmodernije alate za izolaciju žrtve. U 1996., to je bio fiksni telefon i sustav za promjenu glasa. U 2026., to je sama vizualizacija mreže koju mi gradimo. Aplikacija poput *Scream Networka* u rukama ubojice postaje alat za precizno mapiranje meta, dok za istraživače služi kao forenzički arhiv. Ovaj meta-paradoks — da gradimo alat koji bi ubojica mogao koristiti — srž je *Vrisak* metafikcije.
 
-### 4.5. Teorijska podloga: Horor kao oblikovatelj društvenih odnosa
-Horor žanr, a posebno *Vrisak*, ne samo da reflektira društvo, već aktivno sudjeluje u redefiniranju međuljudskih odnosa u kriznim situacijama. 
-- **Kolektivna trauma kao kohezivni faktor:** Mreža pokazuje da likovi poput "Core Four" ostaju povezani isključivo zbog zajedničkog iskustva nasilja, stvarajući nove obiteljske jedinice koje nadilaze krvno srodstvo.
-- **Etika promatranja:** Prema teoriji "društveni vritual" (social ritual), horor služi kao siguran prostor za istraživanje društvenih tabua. U *Vrisku*, granica između promatrača (publike) i sudionika (žrtava/ubojica) stalno se briše, sugerirajući da je naše društvo fascinirano nasiljem do te mjere da ono postaje dio naše socijalne valute.
+### 4.6. Dinamika povratnika: Legacy Trio i Core Four
+
+Jedna od najznačajnijih karakteristika franšize *Vrisak* je njezino oslanjanje na stalne likove koji se vraćaju kroz više filmova, stvarajući snažan osjećaj kontinuiteta koji nedostaje većini slasher serijala (gdje se obično u svakom nastavku uvodi potpuno nova ekipa žrtava).
+
+#### Pregled ključnih povratnika:
+
+| Lik | Filmovi u kojima se pojavljuje |
+| :--- | :--- |
+| **Sidney Prescott** | Scream (1996), Scream 2, Scream 3, Scream 4, Scream (2022), Scream 7 |
+| **Gale Weathers** | Scream (1996), Scream 2, Scream 3, Scream 4, Scream (2022), Scream VI, Scream 7 |
+| **Dewey Riley** | Scream (1996), Scream 2, Scream 3, Scream 4, Scream (2022) |
+| **Randy Meeks** | Scream (1996), Scream 2, Scream 3 |
+| **Billy Loomis** | Scream (1996), Scream (2022), Scream VI (halucinacije) |
+| **Cotton Weary** | Scream (1996), Scream 2, Scream 3 |
+| **Kirby Reed** | Scream 4, Scream VI |
+| **Martha Meeks** | Scream 3, Scream (2022) |
+| **Sam Carpenter** | Scream (2022), Scream VI |
+| **Tara Carpenter** | Scream (2022), Scream VI |
+| **Mindy Meeks-Martin** | Scream (2022), Scream VI, Scream 7 |
+| **Chad Meeks-Martin** | Scream (2022), Scream VI, Scream 7 |
+
+**Gale Weathers** drži rekord s najviše pojavljivanja (svih 7 filmova), što je čini ultimativnim medijskim svjedokom cijele sage.
+
+#### Terminološka klasifikacija fandoma:
+- **Legacy Trio:** Sidney Prescott, Gale Weathers i Dewey Riley. Oni su "sveto trojstvo" preživljavanja koje je definiralo prva četiri filma.
+- **Core Four:** Sam Carpenter, Tara Carpenter, Chad Meeks-Martin i Mindy Meeks-Martin. Ova grupa iz modernih nastavaka (5, 6, 7) predstavlja novu generaciju koja je uspjela stvoriti vlastitu legendu preživljavanja.
+
+Zanimljivost ovog sustava je povratak mrtvih likova (poput **Billyja Loomisa**) kroz halucinacije, što u našem grafu vizualiziramo kao "psihološke veze" (psychological nodes). To naglašava da u Woodsborou prošlost nikada nije mrtva — ona doslovno proganja nasljednike.
 
 ## 5. Napredna analiza i budući rad
 

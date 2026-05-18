@@ -24,10 +24,10 @@ export const screamData: ScreamData = {
     { id: 'rebecca-walters', name: 'Rebecca Walters', movies: [4], role: 'secondary', status: 'dead', description: 'Sidneyina publicistica.' },
 
     // --- NEW GENERATION (CORE FOUR) ---
-    { id: 'sam-carpenter', name: 'Sam Carpenter', movies: [5, 6], role: 'main', status: 'alive', description: 'Glavna protagonistica petog i šestog filma. Ona je izvanbračna kći Billyja Loomisa (prvog ubojice), što je tajna koju je otkrila u majčinim dnevnicima. Pati od vizija svog mrtvog oca koji je potiče na nasilje.' },
-    { id: 'tara-carpenter', name: 'Tara Carpenter', movies: [5, 6], role: 'main', status: 'alive', description: 'Samina mlađa polusestra i prva žrtva napada u filmu iz 2022. koja je preživjela. U vezi je s Chadom Meeks-Martinom.' },
-    { id: 'chad-meeks-martin', name: 'Chad Meeks-Martin', movies: [5, 6], role: 'main', status: 'alive', description: 'Sportaš, sin Marthe Meeks i nećak Randyja Meeksa. Preživio je nevjerojatno velik broj brutalnih napada nožem u oba filma u kojima se pojavio.' },
-    { id: 'mindy-meeks-martin', name: 'Mindy Meeks-Martin', movies: [5, 6], role: 'main', status: 'alive', description: 'Chadova sestra blizanka i filmska stručnjakinja koja objašnjava "pravila" preživljavanja, baš kao i njezin ujak Randy.' },
+    { id: 'sam-carpenter', name: 'Sam Carpenter', movies: [5, 6], role: 'main', status: 'alive', description: 'Glavna protagonistica petog i šestog filma i članica grupe "Core Four". Ona je izvanbračna kći Billyja Loomisa (prvog ubojice), što je tajna koju je otkrila u majčinim dnevnicima. Pati od vizija svog mrtvog oca koji je potiče na nasilje.' },
+    { id: 'tara-carpenter', name: 'Tara Carpenter', movies: [5, 6], role: 'main', status: 'alive', description: 'Samina mlađa polusestra i članica grupe "Core Four". Prva je žrtva napada u filmu iz 2022. koja je preživjela. U vezi je s Chadom Meeks-Martinom.' },
+    { id: 'chad-meeks-martin', name: 'Chad Meeks-Martin', movies: [5, 6, 7], role: 'main', status: 'alive', description: 'Sportaš, član grupe "Core Four", sin Marthe Meeks i nećak Randyja Meeksa. Preživio je nevjerojatno velik broj brutalnih napada nožem.' },
+    { id: 'mindy-meeks-martin', name: 'Mindy Meeks-Martin', movies: [5, 6, 7], role: 'main', status: 'alive', description: 'Chadova sestra blizanka, članica grupe "Core Four" i filmska stručnjakinja koja objašnjava "pravila" preživljavanja, baš kao i njezin ujak Randy.' },
 
     // --- KILLERS & MOTIVES ---
     // Scream (1996)
