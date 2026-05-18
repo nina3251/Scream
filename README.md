@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🔪 SCREAM FRANCHISE SOCIAL NETWORK
 
-# Run and deploy your AI Studio app
+![Ghostface Network Header](./src/assets/images/ghostface_network_banner_1779108327998.png)
 
-This contains everything you need to run your app locally.
+## 📁 Project Overview
+An interactive, forensic-style visualization of the complex social and family relationships spanning the entire **Scream** franchise (Movies 1-7). This application maps the bloodlines, romantic entanglements, and deadly encounters that define the Woodsboro legacy.
 
-View your app in AI Studio: https://ai.studio/apps/c475094e-c821-46ee-ba08-4b4dac8b03c5
+## ✨ Features
+- **Interactive Force-Directed Graph**: Built with **D3.js**, allowing users to explore characters as nodes and their connections as weighted edges.
+- **AI Ghostface Analysis**: Powered by **Google Gemini API**, providing dynamic psychological insights and trivia for every selected character.
+- **Franchise Filtering**: Filter the network by specific movie years (from '96 to '26) to see how the connection web evolves.
+- **Forensic Sidebar**: A detailed "Subject Information" panel with forensic data, threat levels, and appearance logs.
+- **Themed UI**: A "Bold Typography" aesthetic inspired by the *Ghostface_OS* interface, featuring high-contrast visuals and cinematic animations.
 
-## Run Locally
+## 🛠️ Tech Stack
+- **Frontend**: React 19 + TypeScript
+- **Visualization**: D3.js
+- **Styling**: Tailwind CSS + Motion (framer-motion)
+- **AI Integration**: Google Generative AI (Gemini SDK)
+- **Scientific Documentation**: Formal report available in `/report/report_1.md`
 
-**Prerequisites:**  Node.js
+## 🚀 Getting Started
 
+### Environment Variables
+To enable the "Ghostface Analysis" features, you need to provide a Gemini API key:
+```env
+GEMINI_API_KEY=your_api_key_here
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Installation
+1. Install dependencies: `npm install`
+2. Start the dev server: `npm run dev`
+
+## 📖 Scientific Report
+For a deep dive into the socio-narrative visualization methodology used in this project, please refer to our [Scientific Analysis Report](./report/report_1.md).
+
+---
+*© 1996-2026 WOODSBORO FORENSICS DIVISION. ALL SECRETS LEAD TO WOODSBORO.*

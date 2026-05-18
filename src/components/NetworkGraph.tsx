@@ -73,16 +73,19 @@ export default function NetworkGraph({
       .append('line')
       .attr('stroke', d => {
         switch(d.type) {
-          case 'romantic': return '#ff4d4d';
-          case 'killer-victim': return '#8B0000';
+          case 'romantic': return '#ffffff';
+          case 'killer-victim': return '#dc2626';
           case 'family': return '#4d94ff';
           case 'rivalry': return '#ffa500';
           default: return '#555';
         }
       })
-      .attr('stroke-opacity', 0.6)
-      .attr('stroke-width', d => Math.sqrt(d.strength) * 2)
-      .attr('stroke-dasharray', d => d.type === 'killer-victim' ? '5,5' : 'none');
+      .attr('stroke-opacity', d => d.type === 'killer-victim' ? 0.9 : 0.6)
+      .attr('stroke-width', d => {
+        const baseWidth = Math.sqrt(d.strength) * 2;
+        return d.type === 'killer-victim' ? baseWidth * 1.5 : baseWidth;
+      })
+      .attr('stroke-dasharray', d => d.type === 'killer-victim' ? '4,2' : 'none');
 
     // Nodes
     const node = g.append('g')
@@ -166,7 +169,7 @@ export default function NetworkGraph({
       <div className="absolute top-4 left-4 p-6 bg-black/60 backdrop-blur-md border border-neutral-800 flex flex-col gap-3">
         <div className="text-[10px] uppercase tracking-[0.2em] font-black text-neutral-500 mb-1">Key Identifiers</div>
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#ff4d4d]" />
+          <div className="w-3 h-3 rounded-full bg-[#ffffff]" />
           <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">Romantic</span>
         </div>
         <div className="flex items-center gap-3">
