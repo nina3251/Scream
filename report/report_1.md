@@ -1,63 +1,63 @@
-# Meta-Fictional Architectures: A Socio-Narrative Study of the 'Scream' Franchise through Digital Visualization
+# Meta-fikcijske arhitekture: Socio-narativna studija franšize 'Vrisak' kroz digitalnu vizualizaciju
 
-**Author:** Woodsboro Forensic Data Division  
-**Date:** May 18, 2026  
-**Institution:** Woodsboro University, Media & Criminology Department  
-
----
-
-## Abstract
-
-This study examines the evolution of the slasher genre through the forensic analysis of the *Scream* franchise (1996-2026). By utilizing the *Scream Network*—a digital visualization tool implementing force-directed graph theory—this report explores the recurring themes of identity, trauma, and media violence. The analysis focuses on the transition from traditional slasher motifs to postmodern metafiction, the subversion of the "Final Girl" trope through Sidney Prescott, and the shifting identity of the "Ghostface" antagonist. Results indicate that the franchise’s success lies in its radical self-awareness and its ability to mirror contemporary media culture, from the analog era of the 1990s to the AI-driven misinformation era of the 2020s.
+**Autor:** Odjel za forenzičke podatke Woodsboroa  
+**Datum:** 18. svibnja 2026.  
+**Institucija:** Sveučilište Woodsboro, Odsjek za medije i kriminologiju  
 
 ---
 
-## 1. Introduction
+## Sažetak
 
-The *Scream* franchise, pioneered by Wes Craven and Kevin Williamson, redefined horror by introducing characters who were already consumers of the genre. This self-awareness created a feedback loop between the audience and the screen, known as metafiction. The core of the franchise is not merely the violence, but the social network formed by its survivors (the "Legacy Trio" and "Core Four") and its revolving door of antagonists. This report analyzes how the digital visualization of these connections reveals deeper truths about the franchise's impact on modern cinema and its representation of teenage media culture.
-
-## 2. Literature Review: The Slasher and Meta-Horror
-
-### 2.1. The "Final Girl" and Trauma
-Carol J. Clover’s (1992) "Final Girl" trope is personified and subsequently subverted by Sidney Prescott. Unlike her predecessors in *Halloween* or *Friday the 13th*, Sidney’s survival is tied to her agency and psychological interrogation of her legacy. The *Scream Network* visualizes this by positioning her (and her mother, Maureen) as the central nodes of a decades-long cycle of trauma.
-
-### 2.2. Meta-Cinema and the 'Stab' Series
-By creating the fictional *Stab* franchise within the movies, *Scream* allows for a critique of audience fascination with real-world violence. This "film-within-a-film" structure serves as a precursor to the modern "requel" (reboot-sequel) trend seen in horror today.
-
-## 3. Methodology: Narrative Graph Analysis (NGA)
-
-The *Scream Network* application utilizes a Narrative Graph Analysis (NGA) approach, drawing inspiration from collaborative knowledge synthesis tools like **NotebookLM**.
-- **Conceptual Foundation:** Using the analysis from `notebook/53b9ab2f...`, we identified key document clusters—specifically relating to "identity" and "media violence"—and mapped them into the data structure of the app.
-- **Architectural Design:** The app was built using a "Digital Forensic" design philosophy. The goal was to move away from generic UI and create a "Ghostface OS" experience.
-- **Node Classification:** Characters are categorized by their narrative weight (Main, Legacy, Killer, Victim).
-- **Edge Weighting:** Relationships are weighted based on emotional or physical impact—ranging from familial bonds to "killer-victim" transitions.
-- **AI Heuristics:** The integration of the Google Gemini API (informed by NotebookLM's thematic summaries) provides a semantic layer to the quantitative graph, generating qualitative psychological profiles (Ghostface Insights) that reflect the "villain's perspective."
-
-## 4. Analysis and Discussion
-
-### 4.1. The Evolution of Ghostface
-The identity of Ghostface has evolved from a single-motive revenge plot (Billy Loomis) to a multi-faceted critique of media fame and toxic fandom.
-- **Phase 1 (Origin):** Revenge for broken family dynamics (Movies 1-3).
-- **Phase 2 (Meta-Fame):** Killing for social media relevance (Movie 4).
-- **Phase 3 (Toxic Fandom):** Killing to "save" a dying franchise (Movies 5-6).
-- **Phase 4 (Post-Truth):** Using AI deepfakes and misinformation (Movie 7).
-
-### 4.2. Media Culture and the Representation of Teenagers
-The franchise serves as a time capsule for teenage media habits. In 1996, the landline phone was the weapon; in 2026, it is the manipulation of the *Scream Network* itself. Teenagers in *Scream* are portrayed as hyper-literate but ethically desensitized by the media they consume, reflecting the "desensitization theory" often discussed in horror scholarship.
-
-### 4.3. Metafiction and Modern Slashers
-*Scream* (2022) and *Scream VI* popularized the "Requel rules," which have influenced subsequent films like *Evil Dead Rise* and *Halloween Ends*. The self-awareness ensures that the audience's skepticism is baked into the script, turning the viewing experience into a collaborative game of "Who is the Killer?"
-
-## 5. Conclusion
-
-The *Scream* series remains the definitive study of horror tropes because it evolves alongside the audience. Through the *Scream Network* visualization, we clearly see that the "mask" is less an individual identity and more a social contagion—one that feeds on trauma and media saturation. As the franchise enters the era of AI (as seen in the 2026 Woodsboro simulation), the line between reality and the "Stab" fiction continues to blur, proving that in Woodsboro, the rules are always changing, and everyone is a suspect.
+Ova studija istražuje evoluciju slasher žanra kroz forenzičku analizu franšize *Vrisak* (*Scream*) (1996. – 2026.). Koristeći aplikaciju *Scream Network* — alat za digitalnu vizualizaciju koji implementira teoriju grafova usmjerenih silama — ovaj izvještaj istražuje ponavljajuće teme identiteta, traume i medijskog nasilja. Analiza se fokusira na prijelaz s tradicionalnih slasher motiva na postmodernu metafikciju, subverziju tropea "Finalne djevojke" kroz Sidney Prescott i promjenjivi identitet antagonista "Ghostfacea". Rezultati ukazuju na to da uspjeh franšize leži u njezinoj radikalnoj samosvijesti i sposobnosti da zrcali suvremenu medijsku kulturu, od analognog doba devedesetih do ere dezinformacija vođenih umjetnom inteligencijom 2020-ih.
 
 ---
 
-## 6. References
+## 1. Uvod
+
+Franšiza *Vrisak*, koju su pokrenuli Wes Craven i Kevin Williamson, redefinirala je horor uvodeći likove koji su već bili konzumenti tog žanra. Ova samosvijest stvorila je povratnu spregu između publike i ekrana, poznatu kao metafikcija. Okosnica franšize nije samo nasilje, već socijalna mreža koju čine preživjeli ("Legacy Trio" i "Core Four") i stalna smjena antagonista. Ovaj izvještaj analizira kako digitalna vizualizacija tih veza otkriva dublje istine o utjecaju franšize na modernu kinematografiju i njezinu reprezentaciju tinejdžerske medijske kulture.
+
+## 2. Pregled literature: Slasher i meta-horor
+
+### 2.1. "Finalna djevojka" (Final Girl) i trauma
+Trope "Finalne djevojke" Carol J. Clover (1992.) personificiran je i naknadno subvertiran kroz lik Sidney Prescott. Za razliku od svojih prethodnica u filmovima *Noć vještica* (*Halloween*) ili *Petak 13.* (*Friday the 13th*), Sidneyino preživljavanje vezano je uz njezinu odlučnost i psihološko propitivanje njezina naslijeđa. *Scream Network* to vizualizira pozicionirajući nju (i njezinu majku Maureen) kao središnje čvorove u višedesetljetnom ciklusu traume.
+
+### 2.2. Meta-kinematografija i serijal 'Ubod' (Stab)
+Stvaranjem fiktivne franšize *Ubod* unutar filmova, *Vrisak* omogućuje kritiku fascinacije publike stvarnim nasiljem. Ova struktura "filma unutar filma" služi kao preteča modernog trenda "requela" (reboot-nastavak) koji se danas vidi u hororima.
+
+## 3. Metodologija: Analiza narativnog grafa (NGA)
+
+Aplikacija *Scream Network* koristi pristup analize narativnog grafa (NGA), crpeći inspiraciju iz alata za kolaborativnu sintezu znanja poput **NotebookLM-a**.
+- **Konceptualni temelj:** Koristeći analizu iz bilježnice `53b9ab2f...`, identificirali smo ključne klastere dokumenata — specifično vezane uz "identitet" i "medijsko nasilje" — te ih mapirali u strukturu podataka aplikacije.
+- **Arhitektonski dizajn:** Aplikacija je izgrađena koristeći filozofiju "digitalne forenzike". Cilj je bio odmaknuti se od generičkog korisničkog sučelja i stvoriti iskustvo "Ghostface OS-a".
+- **Klasifikacija čvorova:** Likovi su kategorizirani prema njihovoj narativnoj težini (Glavni, Legendarni/Legacy, Ubojica, Žrtva).
+- **Težina veza:** Odnosi su ponderirani na temelju emocionalnog ili fizičkog utjecaja — u rasponu od obiteljskih veza do prijelaza "ubojica-žrtva".
+- **AI heuristika:** Integracija Google Gemini API-ja (informirana tematskim sažecima NotebookLM-a) pruža semantički sloj kvantitativnom grafu, generirajući kvalitativne psihološke profile (Ghostface Insights) koji odražavaju "perspektivu negativca".
+
+## 4. Analiza i rasprava
+
+### 4.1. Evolucija Ghostfacea
+Identitet Ghostfacea evoluirao je od osvetničkog plana s jednim motivom (Billy Loomis) do višestruke kritike medijske slave i toksičnog fandoma.
+- **Faza 1 (Podrijetlo):** Osveta zbog narušenih obiteljskih odnosa (filmovi 1. – 3.).
+- **Faza 2 (Meta-slava):** Ubijanje radi postizanja relevantnosti na društvenim mrežama (film 4.).
+- **Faza 3 (Toksični fandom):** Ubijanje kako bi se "spasila" franšiza koja propada (filmovi 5. – 6.).
+- **Faza 4 (Post-istina):** Korištenje AI deepfakeova i dezinformacija (film 7.).
+
+### 4.2. Medijska kultura i reprezentacija tinejdžera
+Franšiza služi kao vremenska kapsula za tinejdžerske medijske navike. Godine 1996. fiksni telefon bio je oružje; 2026. godine oružje je manipulacija samom mrežom *Scream Network*. Tinejdžeri u *Vrisku* prikazani su kao hiper-obrazovani, ali etički desenzibilizirani medijima koje konzumiraju, što odražava "teoriju desenzibilizacije" o kojoj se često raspravlja u znanosti o hororu.
+
+### 4.3. Metafikcija i moderni slasheri
+*Vrisak* (2022.) i *Vrisak VI* popularizirali su "pravila requela", koja su utjecala na kasnije filmove poput *Evil Dead Rise* i *Halloween Ends*. Samosvijest osigurava da je skepticizam publike ugrađen u scenarij, pretvarajući iskustvo gledanja u kolaborativnu igru "Tko je ubojica?".
+
+## 5. Zaključak
+
+Serijal *Vrisak* ostaje definitivna studija horor tropea jer se razvija usporedo s publikom. Kroz vizualizaciju *Scream Network*, jasno vidimo da "maska" nije toliko individualni identitet koliko društvena zaraza — ona koja se hrani traumom i medijskom zasićenošću. Kako franšiza ulazi u eru umjetne inteligencije (kao što se vidi u simulaciji Woodsboro iz 2026.), granica između stvarnosti i fikcije *Uboda* nastavlja se brisati, dokazujući da se u Woodsborou pravila uvijek mijenjaju i da su svi sumnjivi.
+
+---
+
+## 6. Reference
 
 1. Clover, C. J. (1992). *Men, Women, and Chain Saws: Gender in the Modern Horror Film*. Princeton University Press.
-2. Craven, W. (Director). (1996). *Scream*. Dimension Films.
-3. Williamson, K. (Writer). (1996). *Scream Screenplay Analysis*. Woodsboro Press.
-4. Google AI. (2026). *NotebookLM Analysis of Slasher Tropes*. [Internal Archive: Woodsboro].
+2. Craven, W. (Redatelj). (1996). *Scream*. Dimension Films.
+3. Williamson, K. (Scenarist). (1996). *Scream Screenplay Analysis*. Woodsboro Press.
+4. Google AI. (2026). *NotebookLM Analysis of Slasher Tropes*. [Interna arhiva: Woodsboro].
 5. Woodsboro PD. (2026). *Digital Forensic Report on the Ghostface OS v6.0*. Woodsboro Press.
