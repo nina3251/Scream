@@ -14,7 +14,15 @@ Ova studija istražuje evoluciju slasher žanra kroz forenzičku analizu franši
 
 ## 1. Uvod
 
-Franšiza *Vrisak*, koju su pokrenuli Wes Craven i Kevin Williamson, redefinirala je horor uvodeći likove koji su već bili konzumenti tog žanra. Ova samosvijest stvorila je povratnu spregu između publike i ekrana, poznatu kao metafikcija. Okosnica franšize nije samo nasilje, već socijalna mreža koju čine preživjeli ("Legacy Trio" i "Core Four") i stalna smjena antagonista. Ovaj izvještaj analizira kako digitalna vizualizacija tih veza otkriva dublje istine o utjecaju franšize na modernu kinematografiju i njezinu reprezentaciju tinejdžerske medijske kulture.
+Saga *Vrisak* (*Scream*) predstavlja najznačajniji doprinos postmodernom hororu, započeta 1996. godine pod redateljskom palicom Wesa Cravena i scenarista Kevina Williamsona. Ono što ovaj serijal izdvaja od tipičnih slasher filmova jest njegova duboka utemeljenost u socijalnoj mreži tajni, trauma i medijskih manipulacija koje se protežu kroz tri desetljeća.
+
+Sve počinje u Woodsborou ubojstvom **Maureen Prescott**, čija je prošlost u Hollywoodu (kao Rina Reynolds) i izvanbračne afere s Hankom Loomisom postale katalizator za prvi val nasilja. Njezin sin kojeg je dala na posvajanje, **Roman Bridger**, otkrio je istinu i nagovorio **Billyja Loomisa** da ubije Maureen, što je Billy izveo uz pomoć **Stua Machera** 1996. godine. Billyjev motiv bio je osobni — uništena obitelj zbog Maureenine afere s njegovim ocem — ali je on taj čin pretvorio u medijski spektakl vođen "pravilima horor filmova".
+
+Nakon Woodsboroa, nasilje se preselilo na Windsor College (1997.), gdje je **Nancy Loomis** tražila majčinsku osvetu za Billyjevu smrt, koristeći studenta filma **Mickeyja Altierija** koji je želio slavu okrivljujući filmove za svoja zlodjela. Krug se prividno zatvorio u Hollywoodu (2000.) na setu filma *Ubod 3* (*Stab 3*), gdje je Roman Bridger konačno otkriven kao pravi autor cijelog ciklusa patnje koju je Sidney proživjela.
+
+Nakon petnaest godina zatišja, fanatična opsesija slavom dovela je do novog masakra 2011. godine, kada je Sidneyina rođakinja **Jill Roberts** organizirala ubojstva kako bi postala "nova Sidney", iskorištavajući digitalnu eru društvenih mreža. No, prava evolucija dogodila se 2022. godine uWoodsborou, kada su **Richie Kirsch** i **Amber Freeman**, potaknuti toksičnim fandomom, pokušali "spasiti" franšizu *Ubod* vraćanjem na izvorne aktere. To je ujedno uvelo **Sam Carpenter**, Billyjevu kćer, kao novu nositeljicu naslijeđa.
+
+Masakr u New Yorku (2023.) pokazao je da se krug nasilja transformirao u obiteljsku osvetu obitelji Bailey, dok je najnoviji incident u Pine Groveu (2026.) uveo manipulacije umjetnom inteligencijom, gdje su ubojice poput **Jessice Bowden** koristile AI *deepfake* verzije Deweya Rileyja kako bi uništile Sidneyinu psihu. Kroz sve ove godine, socijalna mreža Woodsboroa postala je najgušći čvor u povijesti horora, a ovaj izvještaj, koristeći *Scream Network*, dešifrira te veze kao forenzički dokaz o neraskidivosti prošlosti i sadašnjosti.
 
 ## 2. Pregled literature: Slasher i meta-horor
 

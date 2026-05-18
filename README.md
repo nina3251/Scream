@@ -12,7 +12,7 @@ Ova mreža obuhvaća sve od originalnog masakra iz 1996. pa sve do najnovijih do
 1.  **Istražite Mapu**: 
     - Glavni ekran prikazuje krugove (likove) i linije (njihove veze).
     - Možete **kliknuti** na bilo koji krug da biste vidjeli detalje o tom liku u desnom izborniku.
-    - Bijele linije predstavljaju ljubavne veze, plave su obiteljske, a crvene linije označavaju smrtonosne susrete između ubojica i žrtava.
+    - Bijele linije predstavljaju ljubavne veze, plave su obiteljske, a crvene masne linije označavaju smrtonosne susrete između ubojica i žrtava.
 
 2.  **Filtrirajte po Godinama**:
     - U desnom izborniku pod naslovom "Target Year" možete odabrati godinu filma (npr. '96, '22, '26).
