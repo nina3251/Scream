@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
-import { Character, Relationship } from '../types';
+import { Character, Relationship, Community, communityDescriptions } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { Ghost, Skull, User, Users, Heart, Zap, Crosshair } from 'lucide-react';
 
@@ -27,6 +27,7 @@ export default function NetworkGraph({
 }: NetworkGraphProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [hoveredLegendCommunity, setHoveredLegendCommunity] = useState<Community | null>(null);
 
   useEffect(() => {
     if (!svgRef.current || !containerRef.current) return;
@@ -194,21 +195,41 @@ export default function NetworkGraph({
       {/* Legend */}
       <div className="absolute top-4 left-4 p-6 bg-black/60 backdrop-blur-md border border-neutral-800 flex flex-col gap-3">
         <div className="text-[10px] uppercase tracking-[0.2em] font-black text-neutral-500 mb-1">Communities (Clusters)</div>
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#1a365d] border border-neutral-600" />
-          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">Woodsboro Legacy</span>
+        
+        <div 
+          className="flex items-center gap-3 cursor-help group/legacy"
+          onMouseEnter={() => setHoveredLegendCommunity('legacy')}
+          onMouseLeave={() => setHoveredLegendCommunity(null)}
+        >
+          <div className="w-3 h-3 rounded-full bg-[#1a365d] border border-neutral-600 transition-transform group-hover/legacy:scale-125 duration-150" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/legacy:text-white transition-colors duration-150">Woodsboro Legacy</span>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#2f855a] border border-neutral-600" />
-          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">The Carpenter Node</span>
+
+        <div 
+          className="flex items-center gap-3 cursor-help group/core"
+          onMouseEnter={() => setHoveredLegendCommunity('core-four')}
+          onMouseLeave={() => setHoveredLegendCommunity(null)}
+        >
+          <div className="w-3 h-3 rounded-full bg-[#2f855a] border border-neutral-600 transition-transform group-hover/core:scale-125 duration-150" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/core:text-white transition-colors duration-150">The Carpenter Node</span>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#000] border border-red-600" />
-          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">The Stab Parasites</span>
+
+        <div 
+          className="flex items-center gap-3 cursor-help group/killers"
+          onMouseEnter={() => setHoveredLegendCommunity('killers')}
+          onMouseLeave={() => setHoveredLegendCommunity(null)}
+        >
+          <div className="w-3 h-3 rounded-full bg-[#000] border border-red-600 transition-transform group-hover/killers:scale-125 duration-150" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/killers:text-white transition-colors duration-150">The Stab Parasites</span>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#4a5568] border border-neutral-600" />
-          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400">Others</span>
+
+        <div 
+          className="flex items-center gap-3 cursor-help group/secondary"
+          onMouseEnter={() => setHoveredLegendCommunity('secondary')}
+          onMouseLeave={() => setHoveredLegendCommunity(null)}
+        >
+          <div className="w-3 h-3 rounded-full bg-[#4a5568] border border-neutral-600 transition-transform group-hover/secondary:scale-125 duration-150" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/secondary:text-white transition-colors duration-150">Others</span>
         </div>
         
         <div className="h-px bg-neutral-800 my-1" />
@@ -232,6 +253,32 @@ export default function NetworkGraph({
           <span className="text-[9px] uppercase font-black tracking-widest text-red-600">Active Threat</span>
         </div>
       </div>
+
+      {/* Community Detail Tooltip */}
+      <AnimatePresence>
+        {hoveredLegendCommunity && (
+          <motion.div
+            initial={{ opacity: 0, x: -10, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -10, scale: 0.95 }}
+            transition={{ duration: 0.15 }}
+            className="absolute top-4 left-[245px] sm:left-[275px] md:left-[285px] w-72 p-5 bg-black/95 backdrop-blur-md border border-neutral-800 text-left shadow-2xl z-50 text-white"
+          >
+            <div className="text-[10px] uppercase font-black tracking-[0.2em] text-red-600 mb-1">
+              Community Profile (Klaster)
+            </div>
+            <h4 className="text-md font-bold tracking-tight mb-2 text-white">
+              {communityDescriptions[hoveredLegendCommunity].name}
+            </h4>
+            <p className="text-xs font-mono text-neutral-300 leading-relaxed normal-case font-medium">
+              {communityDescriptions[hoveredLegendCommunity].desc}
+            </p>
+            <div className="mt-3 text-[9px] font-mono font-bold text-neutral-500 uppercase tracking-widest">
+              Status: Active Analysis
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

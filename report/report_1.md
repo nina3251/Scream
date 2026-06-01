@@ -74,6 +74,85 @@ graph TD
 - **Težina veza:** Odnosi su ponderirani na temelju emocionalnog ili fizičkog utjecaja — u rasponu od obiteljskih veza do prijelaza "ubojica-žrtva".
 - **AI heuristika:** Integracija Google Gemini API-ja (informirana tematskim sažecima NotebookLM-a) pruža semantički sloj kvantitativnom grafu, generirajući kvalitativne psihološke profile (Ghostface Insights) koji odražavaju "perspektivu negativca".
 
+### 3.3. Gephi i NetworkX Modeliranje te Mrežne Metrike
+
+Za obradu i vizualizaciju grafa s profesionalnim standardom, podaci iz aplikacije analizirani su kroz integraciju biblioteka **NetworkX (Python)** i softvera **Gephi**. Ova metodologija omogućuje izračun ključnih invarijanti kompleksnih mreža i primjenu naprednih prostornih rasporeda kako bi se otkrili latentni narativni obrasci.
+
+#### 1. Postavke Prostornog Rasporeda (ForceAtlas2 sili-usmjereni raspored)
+U Gephi vizualizaciji primijenjen je algoritam **ForceAtlas2**, s opcijama podešenim za jasnu separaciju narativnih klastera i naglašavanje mostova:
+- **Scaling (Skaliranje):** $2.0$ (kako bi se povećala disperzija čvorova i spriječilo preklapanje imena likova).
+- **Gravity (Gravitacija):** $1.0$ (održava koheziju cijele mreže).
+- **Prevent Overlap (Sprječavanje preklapanja):** Aktivna opcija, s polumjerom čvorova proporcionalnim njihovoj mrežnoj težini.
+- **Edge Weight Influence (Utjecaj težine veza):** Setiran na $1.2$, što povlači povezane likove i ubojice bliže jedne drugima, čineći obiteljske i traumatske veze prostorno očiglednima.
+
+#### 2. Kvantitativne Metrike Mreže
+Kroz NetworkX modul, za analizu centralnosti korištene su sljedeće formule:
+
+- **Degree Centrality $C_D(v)$:**
+  $$C_D(v) = \frac{\text{deg}(v)}{N - 1}$$
+  Ova metrika identificira likove s najvećim brojem izravnih veza (Sidney Prescott i Gale Weathers), što pokazuje tko je povijesno "najizloženiji" unakrsnoj vatri Woodsboroa.
+
+- **Betweenness Centrality $C_B(v)$:**
+  $$C_B(v) = \frac{\sigma_{st}(v)}{\sigma_{st}}$$
+  Ova metrika izračunava u kojem postotku najkraćih putova između svih parova čvorova u grafu sudjeluje promatrani čvor $v$. Visok $C_B(v)$ označava vrhunske narativne "katalizatore" (poput Maureen Prescott i Billyja Loomisa) koji spajaju izolirane ere nasilja.
+
+#### 3. Python Implementacija (NetworkX skripta za generiranje GEXF datoteke)
+Sljedeća skripta demonstrira programsku analizu strukture te izvoz u Gephi format:
+
+```python
+import networkx as nx
+import json
+
+# Učitavanje Scream Network podataka
+data = {
+    "nodes": [
+        {"id": "sidney-prescott", "name": "Sidney Prescott", "community": "legacy", "role": "legacy"},
+        {"id": "sam-carpenter", "name": "Sam Carpenter", "community": "core-four", "role": "main"},
+        {"id": "billy-loomis", "name": "Billy Loomis", "community": "killers", "role": "killer"},
+        # ... preostali članovi (ukupno 59+)
+    ],
+    "edges": [
+        {"source": "sidney-prescott", "target": "sam-carpenter", "type": "alliance"},
+        {"source": "billy-loomis", "target": "sam-carpenter", "type": "family_inherited"},
+        # ... preostale veze
+    ]
+}
+
+# Inicijalizacija grafa
+G = nx.Graph()
+
+# Dodavanje čvorova s metapodacima
+for node in data["nodes"]:
+    G.add_node(
+        node["id"], 
+        label=node["name"], 
+        community=node["community"], 
+        role=node["role"]
+    )
+
+# Dodavanje veza
+for edge in data["edges"]:
+    G.add_edge(edge["source"], edge["target"], type=edge["type"])
+
+# Izračun metrika
+degrees = nx.degree_centrality(G)
+betweenness = nx.betweenness_centrality(G)
+
+nx.set_node_attributes(G, degrees, 'degree_centrality')
+nx.set_node_attributes(G, betweenness, 'betweenness_centrality')
+
+# Izvoz u GEXF format spreman za učitavanje u Gephi
+nx.write_gexf(G, "scream_network.gexf")
+print("GEXF datoteka uspješno stvorena za profesionalnu Gephi vizualizaciju.")
+```
+
+#### 4. Gephi Renderirana Shema (Konceptualni Prikaz Pozicija)
+ForceAtlas2 raspored u Gephi-ju prostorno grupira mrežu u obliku **leptira (Butterfly Topology)**:
+- **Lijevo krilo (Prošlost / Legacy):** Dominira Sidney Prescott, okružena Randyjem, Deweyem i žrtvama iz '96 i '97.
+- **Desno krilo (Sadašnjost / Core Four):** Grupira Tara, Sam, Mindy i Chada, stvarajući visoko gustu sub-mrežu.
+- **Središnji most (Katalizatori):** Maureen Prescott i Billy Loomis čine usko grlo (bottleneck) kroz koje teče sva narativna energija i motivacija.
+- **Kružni sateliti (The Killers):** Disperzirani po obodu, osim Billyja i Stuarta koji su prostorno povučeni prema centru zbog njihovog trajnog utjecaja na preživjele.
+
 ## 4. Analiza i rasprava
 
 ### 4.1. Evolucija Ghostfacea

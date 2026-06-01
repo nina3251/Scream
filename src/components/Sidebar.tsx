@@ -1,4 +1,5 @@
-import { Character } from '../types';
+import { Character, communityDescriptions, Community } from '../types';
+import { screamData } from '../data/screamData';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Skull, Heart, Users, Shield, Zap, Search, Info, User } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -26,6 +27,17 @@ export default function Sidebar({
   characters 
 }: SidebarProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [hoveredCommunity, setHoveredCommunity] = useState<Community | null>(null);
+
+  const connectionCount = selectedCharacter
+    ? screamData.relationships.filter(r => r.source === selectedCharacter.id || r.target === selectedCharacter.id).length
+    : 0;
+
+  const narrativeImportance = selectedCharacter
+    ? Math.min(100, (selectedCharacter.role === 'legacy' ? 60 : selectedCharacter.role === 'killer' ? 50 : selectedCharacter.role === 'main' ? 45 : selectedCharacter.role === 'secondary' ? 25 : 15) 
+      + (selectedCharacter.movies.length * 5) 
+      + (connectionCount * 3))
+    : 0;
 
   const movieData = [
     { id: 1, label: "'96" },
@@ -119,15 +131,67 @@ export default function Sidebar({
                   <span className="px-2 py-0.5 border border-black text-black text-[10px] font-black uppercase opacity-60">
                     {selectedCharacter.role}
                   </span>
-                  <span className={cn(
-                    "px-2 py-0.5 border text-white text-[10px] font-black uppercase",
-                    selectedCharacter.community === 'legacy' && "bg-blue-900 border-blue-900",
-                    selectedCharacter.community === 'core-four' && "bg-green-900 border-green-900",
-                    selectedCharacter.community === 'killers' && "bg-black border-red-600 text-red-600",
-                    selectedCharacter.community === 'secondary' && "bg-neutral-600 border-neutral-600"
-                  )}>
-                    {selectedCharacter.community.replace('-', ' ')}
-                  </span>
+                  <div 
+                    className="relative inline-block"
+                    onMouseEnter={() => setHoveredCommunity(selectedCharacter.community)}
+                    onMouseLeave={() => setHoveredCommunity(null)}
+                  >
+                    <span className={cn(
+                      "px-2 py-0.5 border text-white text-[10px] font-black uppercase cursor-help select-none transition-all duration-200 hover:brightness-110",
+                      selectedCharacter.community === 'legacy' && "bg-blue-900 border-blue-900",
+                      selectedCharacter.community === 'core-four' && "bg-green-900 border-green-900",
+                      selectedCharacter.community === 'killers' && "bg-black border-red-600 text-red-600",
+                      selectedCharacter.community === 'secondary' && "bg-neutral-600 border-neutral-600"
+                    )}>
+                      {selectedCharacter.community.replace('-', ' ')}
+                    </span>
+
+                    <AnimatePresence>
+                      {hoveredCommunity === selectedCharacter.community && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          className="absolute z-50 left-1/2 -translate-x-1/2 top-full mt-2 w-64 p-3 bg-black text-white border border-neutral-800 shadow-2xl text-left"
+                          style={{ minWidth: "16rem" }}
+                        >
+                          <div className="text-[10px] uppercase font-black tracking-widest text-red-600 mb-1">
+                            {communityDescriptions[selectedCharacter.community].name}
+                          </div>
+                          <p className="text-[10px] font-mono leading-relaxed text-neutral-300 font-medium normal-case">
+                            {communityDescriptions[selectedCharacter.community].desc}
+                          </p>
+                          <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black border-l border-t border-neutral-800 rotate-45" />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+               </div>
+
+               <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-neutral-200 text-left">
+                  <div className="flex flex-col">
+                    <span className="text-[9px] font-mono text-neutral-400 font-bold uppercase tracking-wider">Appearances</span>
+                    <span className="text-xs font-mono font-black text-neutral-800">
+                      {selectedCharacter.movies.length} / 7 Films ({Math.round((selectedCharacter.movies.length / 7) * 100)}%)
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[9px] font-mono text-neutral-400 font-bold uppercase tracking-wider">Connections</span>
+                    <span className="text-xs font-mono font-black text-neutral-800">
+                      {connectionCount} Active Link{connectionCount !== 1 ? 's' : ''}
+                    </span>
+                  </div>
+                  <div className="flex flex-col col-span-2">
+                    <span className="text-[9px] font-mono text-neutral-400 font-bold uppercase tracking-wider mb-1">Narrative Importance (Weight)</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono font-black text-neutral-800 w-8">
+                        {narrativeImportance}%
+                      </span>
+                      <div className="flex-1 h-2 bg-neutral-200 relative overflow-hidden">
+                        <div className="h-full bg-red-600" style={{ width: `${narrativeImportance}%` }} />
+                      </div>
+                    </div>
+                  </div>
                </div>
 
                <div className="mt-6 font-mono text-xs leading-relaxed font-bold border-l-2 border-red-600 pl-4 py-1 italic">
@@ -141,7 +205,7 @@ export default function Sidebar({
                      <Zap className="w-3 h-3 fill-current" />
                      Ghostface Analysis
                    </div>
-                   <div className="text-[10px] font-mono leading-normal text-neutral-300">
+                   <div className="text-[10px] font-mono leading-normal text-neutral-800 font-bold">
                      {loadingInsight ? (
                        <span className="animate-pulse">Accessing encrypted archives...</span>
                      ) : (
