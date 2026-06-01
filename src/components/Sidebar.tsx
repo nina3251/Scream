@@ -42,6 +42,10 @@ export default function Sidebar({
     ? screamData.relationships.filter(r => r.source === selectedCharacter.id || r.target === selectedCharacter.id).length
     : 0;
 
+  const relsForChar = selectedCharacter
+    ? screamData.relationships.filter(r => r.source === selectedCharacter.id || r.target === selectedCharacter.id)
+    : [];
+
   const narrativeImportance = selectedCharacter
     ? Math.min(100, (selectedCharacter.role === 'legacy' ? 60 : selectedCharacter.role === 'killer' ? 50 : selectedCharacter.role === 'main' ? 45 : selectedCharacter.role === 'secondary' ? 25 : 15) 
       + (selectedCharacter.movies.length * 5) 
@@ -205,6 +209,61 @@ export default function Sidebar({
 
                <div className="mt-6 font-mono text-xs leading-relaxed font-bold border-l-2 border-red-600 pl-4 py-1 italic">
                  {selectedCharacter.description}
+               </div>
+
+               {/* Forensic Connection Dossier */}
+               <div className="mt-6 p-4 bg-neutral-950 text-neutral-100 border border-neutral-800 text-left rounded-sm">
+                 <h4 className="text-[10px] uppercase tracking-[0.2em] text-red-500 font-black mb-3 font-mono flex items-center justify-between">
+                   <span>FORENSIC_LINKS // ODNOSI</span>
+                   <span className="text-neutral-500 font-bold">{relsForChar.length} VEZA</span>
+                 </h4>
+                 {relsForChar.length === 0 ? (
+                   <p className="text-[10px] text-neutral-500 font-mono italic">Nema zabilježenih izravnih interakcija u arhivi Woodsboroa.</p>
+                 ) : (
+                   <div className="flex flex-col gap-2.5 max-h-60 overflow-y-auto pr-1">
+                     {relsForChar.map((rel, index) => {
+                       const otherId = rel.source === selectedCharacter.id ? rel.target : rel.source;
+                       const otherChar = characters.find(c => c.id === otherId);
+                       if (!otherChar) return null;
+                       
+                       const relColors = {
+                         family: 'border-blue-900/40 bg-blue-950/20 text-blue-400',
+                         romantic: 'border-pink-900/40 bg-pink-950/20 text-pink-400',
+                         friendship: 'border-green-900/40 bg-green-950/20 text-green-400',
+                         'killer-victim': 'border-red-900 bg-red-950/40 text-red-500',
+                         rivalry: 'border-amber-900/40 bg-amber-950/20 text-amber-500'
+                       };
+                       const relLabels = {
+                         family: 'OBITELJ',
+                         romantic: 'PARTNER',
+                         friendship: 'SAVEZNIK',
+                         'killer-victim': 'UBOJICA / ŽRTVA',
+                         rivalry: 'SUPARNIŠTVO / UTJECAJ'
+                       };
+                       
+                       return (
+                         <div key={index} className="p-2 bg-black/40 border border-neutral-900 hover:border-neutral-800 transition-colors">
+                           <div className="flex items-center justify-between gap-2 mb-1">
+                             <span className="text-[10px] font-black tracking-tight text-white font-mono">
+                               {otherChar.name}
+                             </span>
+                             <span className={cn(
+                               "px-1.5 py-0.5 text-[7px] border font-black uppercase font-mono rounded-[1px]",
+                               relColors[rel.type] || "border-neutral-800 text-neutral-400"
+                             )}>
+                               {relLabels[rel.type] || rel.type}
+                             </span>
+                           </div>
+                           {rel.reason && (
+                             <p className="text-[9px] text-neutral-400 font-mono leading-normal font-medium normal-case">
+                               {rel.reason}
+                             </p>
+                           )}
+                         </div>
+                       );
+                     })}
+                   </div>
+                 )}
                </div>
 
                {/* AI Analyis Section */}

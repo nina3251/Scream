@@ -35,6 +35,7 @@ export interface Relationship {
   target: string; // id
   type: 'family' | 'romantic' | 'friendship' | 'killer-victim' | 'rivalry';
   strength: number;
+  reason?: string;
 }
 
 export interface ScreamData {
