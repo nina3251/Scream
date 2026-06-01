@@ -11,7 +11,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { screamData } from './data/screamData';
-import { Character } from './types';
+import { Character, Community } from './types';
 import NetworkGraph from './components/NetworkGraph';
 import Sidebar from './components/Sidebar';
 import { Skull, Ghost, Search, Menu } from 'lucide-react';
@@ -24,6 +24,8 @@ export default function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [insight, setInsight] = useState<string>('');
   const [loadingInsight, setLoadingInsight] = useState(false);
+  const [activeCommunity, setActiveCommunity] = useState<Community | null>(null);
+  const [communityDetectionActive, setCommunityDetectionActive] = useState(false);
 
   // Filtered data based on search
   const filteredCharacters = useMemo(() => {
@@ -118,6 +120,8 @@ export default function App() {
           onNodeClick={handleNodeClick}
           selectedCharacter={selectedCharacter}
           activeMovie={activeMovie}
+          activeCommunity={activeCommunity}
+          communityDetectionActive={communityDetectionActive}
         />
         
         <Sidebar 
@@ -129,6 +133,10 @@ export default function App() {
           activeMovie={activeMovie}
           onSearch={setSearchQuery}
           characters={screamData.characters}
+          activeCommunity={activeCommunity}
+          setActiveCommunity={setActiveCommunity}
+          communityDetectionActive={communityDetectionActive}
+          setCommunityDetectionActive={setCommunityDetectionActive}
         />
       </main>
 

@@ -14,6 +14,10 @@ interface SidebarProps {
   activeMovie: number | null;
   onSearch: (query: string) => void;
   characters: Character[];
+  activeCommunity: Community | null;
+  setActiveCommunity: (community: Community | null) => void;
+  communityDetectionActive: boolean;
+  setCommunityDetectionActive: (active: boolean) => void;
 }
 
 export default function Sidebar({ 
@@ -24,10 +28,15 @@ export default function Sidebar({
   onMovieFilter, 
   activeMovie,
   onSearch,
-  characters 
+  characters,
+  activeCommunity,
+  setActiveCommunity,
+  communityDetectionActive,
+  setCommunityDetectionActive
 }: SidebarProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredCommunity, setHoveredCommunity] = useState<Community | null>(null);
+  const [sidebarTab, setSidebarTab] = useState<'status' | 'community'>('status');
 
   const connectionCount = selectedCharacter
     ? screamData.relationships.filter(r => r.source === selectedCharacter.id || r.target === selectedCharacter.id).length
@@ -241,42 +250,163 @@ export default function Sidebar({
             </div>
           </motion.div>
         ) : (
-          <div className="flex-1 flex flex-col gap-8 py-4">
-            <div className="bg-neutral-900/50 p-6 border-l-4 border-red-600">
-              <div className="text-[10px] uppercase tracking-widest text-red-500 mb-2">Simulation Status</div>
-              <h3 className="text-3xl horror-title text-neutral-100">STANDBY_MODE</h3>
-              <p className="text-[11px] text-neutral-500 font-mono mt-3 leading-relaxed">
-                Waiting for node selection. Accessing Woodsboro Forensic Server... 
-                Encrypted logs ready for deployment.
-              </p>
+          <div className="flex-1 flex flex-col gap-6 py-2">
+            {/* Tab switchers */}
+            <div className="flex border-b border-neutral-800 text-[10px] uppercase font-black tracking-widest text-[#666]">
+              <button 
+                onClick={() => setSidebarTab('status')}
+                className={cn(
+                  "flex-1 pb-3 text-[10px] font-black uppercase text-center border-b-2 transition-colors",
+                  sidebarTab === 'status' ? "border-red-600 text-white" : "border-transparent text-neutral-500 hover:text-neutral-300"
+                )}
+              >
+                STATUS & THE RULES
+              </button>
+              <button 
+                onClick={() => setSidebarTab('community')}
+                className={cn(
+                  "flex-1 pb-3 text-[10px] font-black uppercase text-center border-b-2 transition-colors",
+                  sidebarTab === 'community' ? "border-red-600 text-white" : "border-transparent text-neutral-500 hover:text-neutral-300"
+                )}
+              >
+                GENERATE COMMUNITIES
+              </button>
             </div>
 
-            <div className="bg-red-600 p-6 text-black shadow-lg">
-              <div className="flex items-center gap-2 mb-4">
-                <Skull className="w-5 h-5 fill-current" />
-                <h4 className="font-black text-sm uppercase tracking-widest">The Rules</h4>
+            {sidebarTab === 'status' ? (
+              <div className="flex flex-col gap-6">
+                <div className="bg-neutral-900/50 p-6 border-l-4 border-red-600">
+                  <div className="text-[10px] uppercase tracking-widest text-red-500 mb-2">Simulation Status</div>
+                  <h3 className="text-3xl horror-title text-neutral-100">STANDBY_MODE</h3>
+                  <p className="text-[11px] text-neutral-500 font-mono mt-3 leading-relaxed">
+                    Waiting for node selection. Accessing Woodsboro Forensic Server... 
+                    Encrypted logs ready for deployment.
+                  </p>
+                </div>
+
+                <div className="bg-red-600 p-6 text-black shadow-lg">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Skull className="w-5 h-5 fill-current" />
+                    <h4 className="font-black text-sm uppercase tracking-widest">The Rules</h4>
+                  </div>
+                  <ul className="text-[11px] font-black uppercase leading-tight space-y-3 font-mono">
+                    <li className="flex items-start gap-2">
+                      <span className="text-white bg-black w-4 h-4 rounded-full flex items-center justify-center text-[10px]">1</span>
+                      <span>Don't answer the door</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-white bg-black w-4 h-4 rounded-full flex items-center justify-center text-[10px]">2</span>
+                      <span>Don't hide in the closet</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-white bg-black w-4 h-4 rounded-full flex items-center justify-center text-[10px]">3</span>
+                      <span>Everyone is a suspect</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <ul className="text-[11px] font-black uppercase leading-tight space-y-3 font-mono">
-                <li className="flex items-start gap-2">
-                  <span className="text-white bg-black w-4 h-4 rounded-full flex items-center justify-center text-[10px]">1</span>
-                  <span>Don't answer the door</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-white bg-black w-4 h-4 rounded-full flex items-center justify-center text-[10px]">2</span>
-                  <span>Don't hide in the closet</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-white bg-black w-4 h-4 rounded-full flex items-center justify-center text-[10px]">3</span>
-                  <span>Everyone is a suspect</span>
-                </li>
-              </ul>
-            </div>
+            ) : (
+              <div className="flex flex-col gap-5">
+                <div className="p-4 bg-red-600/10 border border-red-600/30 text-left">
+                  <div className="text-[10px] uppercase tracking-widest text-red-500 mb-2 flex items-center gap-2 font-black">
+                    <Zap className="w-3.5 h-3.5 animate-pulse text-red-600" />
+                    INTERACTIVE CLUSTER DETECTION
+                  </div>
+                  <p className="text-[10px] text-neutral-300 font-mono leading-relaxed">
+                    Louvainov algoritam detektira preklapajuće mreže i grupe likova koje često interagiraju na temelju obiteljskih, romantičnih ili ubojitih srodnosti.
+                  </p>
+                  
+                  <div className="mt-4 flex items-center justify-between gap-2 border-t border-neutral-800 pt-3">
+                    <span className="text-[8px] font-mono font-bold text-neutral-400">PODIJELI GRAF U OTOKE (GRAVITY):</span>
+                    <button
+                      onClick={() => setCommunityDetectionActive(!communityDetectionActive)}
+                      className={cn(
+                        "px-3 py-1 text-[9px] font-mono font-black border transition-colors",
+                        communityDetectionActive ? "bg-red-600 text-black border-red-600" : "bg-transparent text-neutral-500 border-neutral-800 hover:border-neutral-700"
+                      )}
+                    >
+                      {communityDetectionActive ? "AKTIVAN" : "UKLJUČI"}
+                    </button>
+                  </div>
+                </div>
 
-            <div className="mt-auto border border-neutral-800 p-4 bg-neutral-900/10">
+                <div className="flex flex-col gap-3">
+                  <span className="text-[9px] font-mono text-neutral-500 font-bold uppercase tracking-widest text-left">DETEKTIRANE SKUPINE (KLASTERI):</span>
+                  
+                  {(['legacy', 'core-four', 'killers', 'secondary'] as Community[]).map((comm) => {
+                    const desc = communityDescriptions[comm];
+                    const isSelected = activeCommunity === comm;
+                    const commMembers = characters.filter(c => c.community === comm);
+                    const commColors = {
+                      'legacy': 'bg-blue-950/40 border-blue-900 text-blue-300 hover:bg-blue-950/20',
+                      'core-four': 'bg-green-950/40 border-green-900 text-green-300 hover:bg-green-950/20',
+                      'killers': 'bg-red-950/40 border-red-900 text-red-300 hover:bg-red-950/20',
+                      'secondary': 'bg-neutral-950/40 border-neutral-800 text-neutral-300 hover:bg-neutral-950/20'
+                    };
+                    const badgeColors = {
+                      'legacy': 'bg-blue-900 text-white border-blue-800',
+                      'core-four': 'bg-green-900 text-white border-green-800',
+                      'killers': 'bg-black text-red-600 border-red-600',
+                      'secondary': 'bg-neutral-800 text-white border-neutral-700'
+                    };
+                    
+                    return (
+                      <div 
+                        key={comm}
+                        onClick={() => setActiveCommunity(isSelected ? null : comm)}
+                        className={cn(
+                          "p-3 border cursor-pointer transition-all duration-200 select-none text-left rounded-sm",
+                          commColors[comm],
+                          isSelected ? "border-red-500 bg-red-950/60 shadow-lg scale-[1.02]" : "border-neutral-900"
+                        )}
+                      >
+                        <div className="flex items-center justify-between mb-1">
+                          <span className={cn(
+                            "px-1.5 py-0.5 border text-[8px] font-mono font-black uppercase tracking-wider",
+                            badgeColors[comm]
+                          )}>
+                            {desc.name}
+                          </span>
+                          <span className="text-[8px] font-mono text-neutral-500 font-semibold uppercase">{commMembers.length} likova</span>
+                        </div>
+                        <p className="text-[10px] text-neutral-400 font-mono normal-case leading-snug mb-2 font-medium">
+                          {desc.desc}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-1 mt-1 opacity-75">
+                          {commMembers.slice(0, 4).map(c => (
+                            <span key={c.id} className="text-[8px] font-mono bg-black/50 px-1 py-0.5 border border-white/5 text-neutral-300">
+                              {c.name.split(' ')[0]}
+                            </span>
+                          ))}
+                          {commMembers.length > 4 && (
+                            <span className="text-[8px] font-mono text-neutral-500 px-1 py-0.5">
+                              +{commMembers.length - 4} još
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-auto border border-neutral-800 p-4 bg-neutral-900/10 text-left">
                <span className="text-[9px] font-mono text-neutral-600 uppercase tracking-widest block mb-2">System Terminal</span>
-               <div className="flex items-center gap-2">
-                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                 <span className="text-[9px] font-mono text-neutral-500">GHOST_WATCH_LIVE v6.0</span>
+               <div className="flex justify-between items-center">
+                 <div className="flex items-center gap-2">
+                   <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                   <span className="text-[9px] font-mono text-neutral-500">GHOST_WATCH_LIVE v6.0</span>
+                 </div>
+                 {activeCommunity && (
+                   <button 
+                     onClick={() => setActiveCommunity(null)}
+                     className="text-[9px] font-mono text-red-600 underline font-black uppercase hover:text-red-500"
+                   >
+                     CLEAR_FOCUS
+                   </button>
+                 )}
                </div>
             </div>
           </div>

@@ -16,6 +16,8 @@ interface NetworkGraphProps {
   onNodeClick: (character: Character) => void;
   selectedCharacter: Character | null;
   activeMovie: number | null;
+  activeCommunity: Community | null;
+  communityDetectionActive: boolean;
 }
 
 export default function NetworkGraph({ 
@@ -23,7 +25,9 @@ export default function NetworkGraph({
   relationships, 
   onNodeClick, 
   selectedCharacter,
-  activeMovie 
+  activeMovie,
+  activeCommunity,
+  communityDetectionActive
 }: NetworkGraphProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,7 +60,7 @@ export default function NetworkGraph({
       .force('collision', d3.forceCollide<SimulationNode>().radius(60));
 
     // Force grouping by community
-    simulation.force('x', d3.forceX().strength(0.1).x(d => {
+    simulation.force('x', d3.forceX().strength(communityDetectionActive ? 0.28 : 0.02).x(d => {
       switch((d as Character).community) {
         case 'legacy': return width * 0.25;
         case 'core-four': return width * 0.75;
@@ -66,7 +70,7 @@ export default function NetworkGraph({
       }
     }));
     
-    simulation.force('y', d3.forceY().strength(0.1).y(d => {
+    simulation.force('y', d3.forceY().strength(communityDetectionActive ? 0.28 : 0.02).y(d => {
       switch((d as Character).community) {
         case 'legacy': return height * 0.25;
         case 'core-four': return height * 0.25;
@@ -102,7 +106,19 @@ export default function NetworkGraph({
           default: return '#555';
         }
       })
-      .attr('stroke-opacity', d => d.type === 'killer-victim' ? 0.9 : 0.6)
+      .attr('stroke-opacity', d => {
+        if (activeCommunity) {
+          const sourceId = typeof d.source === 'string' ? d.source : (d.source as any).id;
+          const targetId = typeof d.target === 'string' ? d.target : (d.target as any).id;
+          const sourceChar = characters.find(c => c.id === sourceId);
+          const targetChar = characters.find(c => c.id === targetId);
+          if (sourceChar?.community === activeCommunity && targetChar?.community === activeCommunity) {
+            return d.type === 'killer-victim' ? 0.95 : 0.7;
+          }
+          return 0.04;
+        }
+        return d.type === 'killer-victim' ? 0.9 : 0.6;
+      })
       .attr('stroke-width', d => {
         const baseWidth = Math.sqrt(d.strength) * 2;
         return d.type === 'killer-victim' ? baseWidth * 1.5 : baseWidth;
@@ -136,11 +152,19 @@ export default function NetworkGraph({
           default: return '#000';
         }
       })
+      .attr('fill-opacity', d => {
+        if (!activeCommunity) return 1;
+        return d.community === activeCommunity ? 1 : 0.12;
+      })
       .attr('stroke', d => {
         if (d.id === selectedCharacter?.id) return '#dc2626';
         if (d.role === 'killer') return '#dc2626';
         if (d.role === 'legacy') return '#4a5568';
         return '#333';
+      })
+      .attr('stroke-opacity', d => {
+        if (!activeCommunity) return 1;
+        return d.community === activeCommunity ? 1 : 0.12;
       })
       .attr('stroke-width', d => d.id === selectedCharacter?.id ? 4 : 2)
       .attr('stroke-dasharray', d => d.status === 'dead' ? '4,2' : 'none')
@@ -153,6 +177,10 @@ export default function NetworkGraph({
       .attr('font-family', 'Anton')
       .attr('font-size', d => d.id === selectedCharacter?.id ? '12px' : '9px')
       .attr('fill', d => d.id === selectedCharacter?.id ? '#000' : '#fff')
+      .attr('fill-opacity', d => {
+        if (!activeCommunity) return 1;
+        return d.community === activeCommunity ? 1 : 0.15;
+      })
       .attr('pointer-events', 'none')
       .attr('class', 'uppercase tracking-tighter')
       .text(d => d.name.split(' ')[0]);
@@ -186,11 +214,29 @@ export default function NetworkGraph({
       window.removeEventListener('resize', handleResize);
       simulation.stop();
     };
-  }, [characters, relationships, onNodeClick, selectedCharacter, activeMovie]);
+  }, [characters, relationships, onNodeClick, selectedCharacter, activeMovie, activeCommunity, communityDetectionActive]);
 
   return (
     <div ref={containerRef} className="w-full h-full relative overflow-hidden">
-      <svg ref={svgRef} className="w-full h-full" />
+      {/* Community Overlay Titles on the Force Graph for Forensic Mapping */}
+      {communityDetectionActive && (
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden font-mono text-[9px] uppercase tracking-widest font-black">
+          <div className="absolute top-[18%] left-[10%] flex flex-col items-start gap-1 p-3 bg-blue-950/5 border border-blue-950/20 rounded">
+            <span className="text-blue-500/25 font-black font-mono">LEGACY_CLUSTER_v.01 // [SECURE]</span>
+            <span className="text-neutral-700/20">Coordinates: x:25% y:25%</span>
+          </div>
+          <div className="absolute top-[18%] right-[10%] flex flex-col items-start gap-1 p-3 bg-green-950/5 border border-green-950/20 rounded">
+            <span className="text-green-500/25 font-black font-mono">CARPENTER_NODE // [MONITORED]</span>
+            <span className="text-neutral-700/20">Coordinates: x:75% y:25%</span>
+          </div>
+          <div className="absolute bottom-[22%] left-[40%] flex flex-col items-start gap-1 p-3 bg-red-950/5 border border-red-950/20 rounded">
+            <span className="text-red-600/25 font-black font-mono font-black">THREAT_PARASITES // [CRITICAL]</span>
+            <span className="text-neutral-700/20">Coordinates: x:50% y:75%</span>
+          </div>
+        </div>
+      )}
+
+      <svg ref={svgRef} className="w-full h-full relative z-10" />
       
       {/* Legend */}
       <div className="absolute top-4 left-4 p-6 bg-black/60 backdrop-blur-md border border-neutral-800 flex flex-col gap-3">
