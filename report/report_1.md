@@ -41,6 +41,25 @@ Od legendarne scene s fiksnim telefonom do manipulacija dubokim krivotvorinama (
 ### 2.5. Utjecaj na moderne slashere
 Bez *Vriska*, moderni horori poput *Cabin in the Woods* ili *Bodies Bodies Bodies* ne bi postojali. Franšiza je otvorila prostor za horor koji je "pametan", svjestan svojih klišea i spreman se šaliti na vlastiti račun, a da pritom zadrži istinski osjećaj ugroze. Analiza mrežnih čvorova u našem sustavu pokazuje da je moć Ghostfacea upravo u njegovoj anonimnosti — maska može biti bilo tko, što je ultimativni strah u društvu koje sve više gubi individualnost u kolektivnom digitalnom prostoru.
 
+### 2.6. Teorijska podloga: Kako horor žanr oblikuje društvene odnose
+
+Horor žanr ne funkcionira isključivo kao estetska kategorija ili puki sustav za proizvodnju afekata jeze i straha; on predstavlja aktivnog sociološkog i antropološkog čimbenika koji rekonfigurira, posreduje i doslovno *oblikuje* društvene odnose unutar zajednica izloženih ekstremnim krizama. Kroz prizmu teorije mreža i relacijske sociologije, utjecaj horora na društvenu dinamiku može se analizirati kroz nekoliko ključnih dimenzija:
+
+#### 1. Mreža paranoje i destrukcija socijalnog kapitala
+U klasičnom društvenom kontekstu, socijalni kapital (povjerenje, reciprocitet, suradnja) služi kao ljepilo koje drži zajednicu na okupu. Međutim, narativni ustroj horor žanra — a napose slasher podžanra s motivom "unutarnjeg neprijatelja" ili maskiranog ubojice — provodi nasilnu dekonstrukciju tog kapitala. 
+Kao što je uočio sociolog **Ulrich Beck** u svojoj teoriji prodora "društva rizika" (*Risk Society*), pod utjecajem stalne i neopipljive prijetnje društvene veze prestaju biti kanali uzajamne podrške i pretvaraju se u vektore sumnje. Svaki susjed, prijatelj ili član uže obitelji postaje potencijalni antagonist (čvor koji prenosi smrt). U *Vrisku*, maksima *"Svaki je lik osumnjičenik"* reflektira radikalnu individualizaciju opasnosti gdje hiper-vigilancija (stalni oprez) eliminira mogućnost spontane društvene kohezije, stvarajući umjesto toga atomizirane jedinke u stalnom strahu od izdaje.
+
+#### 2. Traumatska kohezija i liminalna "Communitas"
+Kontrapunkt destrukciji socijalnog kapitala jest formiranje ekstremno gustih mrežnih otoka preživjelih, fenomen koji antropolog **Victor Turner** opisuje kao nastanak *communitas* unutar liminalnog prostora. Turner definira liminalnost kao stanje tranzicije i ogoljenosti — stanje u kojem se uobičajene društvene uloge i hijerarhije brišu jer su akteri suočeni sa zajedničkom, egzistencijalnom prijetnjom.
+U hororu, ova prijetnja djeluje kao magnetska sila koja sabija preživjele u neprobojne obrambene klastere (npr. *Woodsboro Legacy* ili *Core Four*). Te veze nisu utemeljene na uobičajenim društvenim afinitetima, već na zajedničkoj traumi. One predstavljaju paktu srodnosti po krvi i oštrici, gdje gustoća interakcija unutar grupe doseže maksimalne vrijednosti jer pojedinci shvaćaju da je relacijska izolacija izvan klastera ravna narativnoj (i fizičkoj) smrti.
+
+#### 3. Girardov mimetizam i žrtvovanje (Scapegoating)
+Teoretičar **René Girard** u svojoj analizi mimetizma i nasilja ističe da imitacija želja i ponašanja vodi neizbježnom sukobu koji se unutar zajednice rješava isključivo mehanizmom prognaništva ili pronalaska "žrtvenog jarca". Horor žanr par excellence ilustrira ovaj proces. Maska Ghostfacea je u svojoj bazi mimetički prazan označitelj — nju može staviti bilo tko kako bi kanalizirao potisnuto nasilje, zavist ili osvetu. 
+U trenucima kada se ubojstva zaredaju, mrežna dinamika zajednice se destabilizira dok se ne identificira i žrtvuje ubojica (ili u nekim slučajevima nedužna meta, poput Cottona Wearyja). Kada se to dogodi, društveni odnosi se privremeno stabiliziraju, a preživjeli proživljavaju katarzu koja reinstalira prividni društveni mir prije nego što novi ciklus mimetičkog nasilja započne u sljedećem nastavku.
+
+#### 4. Kibernetička povratna sprega (Feedforward Loop)
+Možda najfascinantniji aspekt preklapanja horora i društvenih odnosa leži u tome što **predodžba o žanru povratno utječe na ponašanje aktera**. Likovi u slasherima više ne bježe nasumično; oni se strukturiraju i komuniciraju *ponašajući se kao da znaju da su u horor filmu*. Pravila žanra postaju stvarni operativni protokol za upravljanje mrežnim vezama (koga zvati, kome vjerovati, na koji način se grupirati). Ovaj autoreferencijalni feedforward mrežni loop pretvara horor iz pasivnog promatrača u aktivnog dizajnera društvene topografije, stvarajući visoko teorijsko polje u kojem se fikcija i forenzička stvarnost prožimaju u neraskidivu narativnu petlju.
+
 ## 3. Metodologija: Analiza narativnog grafa (NGA)
 
 Aplikacija *Scream Network* koristi pristup analize narativnog grafa (NGA), crpeći inspiraciju iz alata za kolaborativnu sintezu znanja poput **NotebookLM-a**. Sustav nije samo vizualni prikaz, već matematički model koji obrađuje **59+ jedinstvenih subjekata** povezanih kroz **sedam zasebnih vremenskih slojeva (1996. – 2026.)**.

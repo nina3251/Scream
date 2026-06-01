@@ -27,7 +27,7 @@ Ova mreža obuhvaća sve od originalnog masakra iz 1996. pa sve do najnovijih do
 
 ---
 
-## ⚡ Napredne Funkcionalnosti
+## ⚡ Novododane Napredne Funkcionalnosti
 
 Kako bismo produbili analitičku i forenzičku stranu simulacije, u Woodsboro mrežnu arhivu ugradili smo sljedeća rješenja:
 
