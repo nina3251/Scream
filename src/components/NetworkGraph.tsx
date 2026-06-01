@@ -143,24 +143,24 @@ export default function NetworkGraph({
         return 25;
       })
       .attr('fill', d => {
-        if (d.id === selectedCharacter?.id) return '#fff';
+        if (d.id === selectedCharacter?.id) return '#ffffff';
         switch(d.community) {
-          case 'legacy': return '#1a365d'; // Deep blue
-          case 'core-four': return '#2f855a'; // Green
-          case 'killers': return '#000'; // Black
-          case 'secondary': return '#4a5568'; // Gray
-          default: return '#000';
+          case 'legacy': return '#3b82f6'; // Vibrant Chrome Blue
+          case 'core-four': return '#10b981'; // Vibrant Emerald Green
+          case 'killers': return '#ef4444'; // Vibrant Blood Red
+          case 'secondary': return '#f59e0b'; // Vibrant Safety Amber
+          default: return '#6b7280';
         }
       })
       .attr('fill-opacity', d => {
         if (!activeCommunity) return 1;
-        return d.community === activeCommunity ? 1 : 0.12;
+        return d.community === activeCommunity ? 1 : 0.15;
       })
       .attr('stroke', d => {
-        if (d.id === selectedCharacter?.id) return '#dc2626';
-        if (d.role === 'killer') return '#dc2626';
-        if (d.role === 'legacy') return '#4a5568';
-        return '#333';
+        if (d.id === selectedCharacter?.id) return '#ffffff';
+        if (d.role === 'killer') return '#ff3333'; // Flashing neon boundary
+        if (d.status === 'dead') return '#7f1d1d'; // Crimson boundary for deceased
+        return '#000000';
       })
       .attr('stroke-opacity', d => {
         if (!activeCommunity) return 1;
@@ -247,7 +247,7 @@ export default function NetworkGraph({
           onMouseEnter={() => setHoveredLegendCommunity('legacy')}
           onMouseLeave={() => setHoveredLegendCommunity(null)}
         >
-          <div className="w-3 h-3 rounded-full bg-[#1a365d] border border-neutral-600 transition-transform group-hover/legacy:scale-125 duration-150" />
+          <div className="w-3 h-3 rounded-full bg-[#3b82f6] border border-neutral-600 transition-transform group-hover/legacy:scale-125 duration-150" />
           <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/legacy:text-white transition-colors duration-150">Woodsboro Legacy</span>
         </div>
 
@@ -256,7 +256,7 @@ export default function NetworkGraph({
           onMouseEnter={() => setHoveredLegendCommunity('core-four')}
           onMouseLeave={() => setHoveredLegendCommunity(null)}
         >
-          <div className="w-3 h-3 rounded-full bg-[#2f855a] border border-neutral-600 transition-transform group-hover/core:scale-125 duration-150" />
+          <div className="w-3 h-3 rounded-full bg-[#10b981] border border-neutral-600 transition-transform group-hover/core:scale-125 duration-150" />
           <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/core:text-white transition-colors duration-150">The Carpenter Node</span>
         </div>
 
@@ -265,7 +265,7 @@ export default function NetworkGraph({
           onMouseEnter={() => setHoveredLegendCommunity('killers')}
           onMouseLeave={() => setHoveredLegendCommunity(null)}
         >
-          <div className="w-3 h-3 rounded-full bg-[#000] border border-red-600 transition-transform group-hover/killers:scale-125 duration-150" />
+          <div className="w-3 h-3 rounded-full bg-[#ef4444] border border-red-600 transition-transform group-hover/killers:scale-125 duration-150" />
           <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/killers:text-white transition-colors duration-150">The Stab Parasites</span>
         </div>
 
@@ -274,8 +274,8 @@ export default function NetworkGraph({
           onMouseEnter={() => setHoveredLegendCommunity('secondary')}
           onMouseLeave={() => setHoveredLegendCommunity(null)}
         >
-          <div className="w-3 h-3 rounded-full bg-[#4a5568] border border-neutral-600 transition-transform group-hover/secondary:scale-125 duration-150" />
-          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/secondary:text-white transition-colors duration-150">Others</span>
+          <div className="w-3 h-3 rounded-full bg-[#f59e0b] border border-neutral-600 transition-transform group-hover/secondary:scale-125 duration-150" />
+          <span className="text-[9px] uppercase font-black tracking-widest text-neutral-400 group-hover/secondary:text-white transition-colors duration-150">Ostali / Secondary</span>
         </div>
         
         <div className="h-px bg-neutral-800 my-1" />

@@ -36,6 +36,9 @@ export interface Relationship {
   type: 'family' | 'romantic' | 'friendship' | 'killer-victim' | 'rivalry';
   strength: number;
   reason?: string;
+  totalInteractions?: number;
+  interactionsPerMovie?: Record<string, number>;
+  videoClips?: Array<{ title: string; embedUrl: string }>;
 }
 
 export interface ScreamData {
